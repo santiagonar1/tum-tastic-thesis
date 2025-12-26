@@ -1,0 +1,11 @@
+{
+    "editor.tabSize": 4,
+    "tinymist.formatterProseWrap": true,
+    "tinymist.formatterPrintWidth": 80,
+    "editor.rulers": [
+        80,
+    ],
+    "cSpell.words": [
+        "Narváez"
+    ],
+}

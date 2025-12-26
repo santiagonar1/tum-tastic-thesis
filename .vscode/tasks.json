@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Typst: Build Project",
+      "type": "shell",
+      "command": "typst",
+      "args": ["compile", "main.typ", "build/main.pdf"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Typst: Build File",
+      "type": "shell",
+      "command": "typst",
+      "args": [
+        "compile",
+        "${relativeFile}",
+        "build/${fileBasenameNoExtension}.pdf"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
