@@ -8,7 +8,7 @@
 
 #set text(font: tum-font)
 
-#let print-dissertation-cover(
+#let print-dissertation-title(
   author-info: (
     name: "Your Name Here",
     group-name: "Your Group Or Chair Here",
@@ -153,7 +153,7 @@
   day: 4,
 )
 
-#print-dissertation-cover(
+#print-dissertation-title(
   author-info: author-info,
   dissertation-title: dissertation-title,
   degree-name: degree-name,
@@ -163,5 +163,5 @@
   subtitle: subtitle,
 )
 
-#print-dissertation-cover()
+#print-dissertation-title()
 
