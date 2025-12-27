@@ -99,7 +99,7 @@
 
   #let submission-block = [
     Die Dissertation wurde am #date-submitted.display("[day].[month].[year]")
-    bei der #tum-name.dative eingereicht und durch die #author-info.group-name
+    bei der #tum-name.dative eingereicht und durch die #author-info.school-name
     am #date-accepted.display("[day].[month].[year]") angenommen.
   ]
 
