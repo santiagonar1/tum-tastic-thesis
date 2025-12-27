@@ -106,8 +106,10 @@
   #place(top + left, dx: 0pt, dy: content-height / 2)[
     #set text(size: font-sizes.base)
 
+    #let first-box-height = half-page / 2 - tum-logo-height
+
     #box(
-      height: half-page / 2,
+      height: first-box-height,
       width: content-width,
     )[
       #fine-print-block
@@ -118,7 +120,7 @@
       width: content-width,
     )[
       #committee-block
-      #v(3em)
+      #v(4em)
       #submission-block
     ]
   ]
