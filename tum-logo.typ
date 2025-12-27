@@ -1,14 +1,11 @@
 #import "@preview/cetz:0.4.2"
 
-#import "tum-colors.typ": tum-blue
+#import "tum-colors.typ": tum-colors
 
 #set page(
   paper: "a4",
   margin: (x: 1.8cm, y: 1.5cm),
 )
-
-// for width ratio, see pts in tum-logo-canvas: ratio = max-x / max-y = 1.89
-// #let draw-tum-logo(height: 10mm) = diagram(tum-logo-canvas, height, 1.9)
 
 #let draw-tum-logo(height, origin: bottom + left) = {
   let diagram(canvas, width-ratio) = {
@@ -51,9 +48,10 @@
       (29, 39),
     )
 
-    line(..pts, fill: tum-blue)
+    line(..pts, fill: tum-colors.blue)
   })
 
+  // ratio = max-x / max-y = 1.89
   diagram(tum-logo-canvas, 1.9)
 }
 
@@ -61,7 +59,9 @@
   columns: 3,
   stroke: 1pt,
   gutter: 5pt,
-  draw-tum-logo(10mm), draw-tum-logo(20mm), draw-tum-logo(40mm),
+  draw-tum-logo(10mm, origin: top + left),
+  draw-tum-logo(20mm, origin: top + left),
+  draw-tum-logo(40mm, origin: top + left),
 )
 
 #v(12pt)
@@ -70,8 +70,8 @@
   rows: 3,
   stroke: 1pt,
   gutter: 5pt,
-  draw-tum-logo(10mm),
-  draw-tum-logo(20mm),
-  draw-tum-logo(40mm),
+  draw-tum-logo(10mm, origin: top + left),
+  draw-tum-logo(20mm, origin: top + left),
+  draw-tum-logo(40mm, origin: top + left),
 )
 
