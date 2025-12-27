@@ -28,6 +28,17 @@
   #check-author-info(author-info)
   #check-committee-info(committee-info)
 
+  #if date-submitted > date-accepted [
+    #let error-msg = (
+      "[print-dissertation-cover] Date submitted (which is "
+        + date-submitted.display()
+        + ") cannot be after date accepted (which is "
+        + date-accepted.display()
+        + ")"
+    )
+    #panic(error-msg)
+  ]
+
   #let margins = (
     top: 3 * tum-logo-height,
     bottom: 2 * tum-logo-height,
