@@ -9,13 +9,21 @@
 #set text(font: tum-font)
 
 #let print-dissertation-cover(
-  author-info,
-  dissertation-title,
+  author-info: (
+    name: "Your Name Here",
+    group-name: "Your Group Or Chair Here",
+    school-name: "Your School Here",
+  ),
+  dissertation-title: "Your Title Here",
   subtitle: none,
-  degree-name,
-  committee-info,
-  date-submitted,
-  date-accepted,
+  degree-name: "Dr. In Something",
+  committee-info: (
+    chair: "Prof. Chair Here",
+    first-evaluator: "Prof. First Evaluator Here",
+    second-evaluator: "Prof. Second Evaluator Here",
+  ),
+  date-submitted: datetime.today(),
+  date-accepted: datetime.today(),
 ) = [
   #check-author-info(author-info)
   #check-committee-info(committee-info)
@@ -135,12 +143,14 @@
 )
 
 #print-dissertation-cover(
-  author-info,
-  dissertation-title,
-  degree-name,
-  committee-info,
-  date-submitted,
-  date-accepted,
+  author-info: author-info,
+  dissertation-title: dissertation-title,
+  degree-name: degree-name,
+  committee-info: committee-info,
+  date-submitted: date-submitted,
+  date-accepted: date-accepted,
   subtitle: subtitle,
 )
+
+#print-dissertation-cover()
 

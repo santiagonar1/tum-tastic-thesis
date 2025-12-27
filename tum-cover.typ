@@ -4,7 +4,15 @@
 #import "tum-page.typ": tum-page
 #import "tum-header.typ": three-liner-headline-with-logo, tum-logo-height
 
-#let print-cover(author-info, title, subtitle: none) = [
+#let print-cover(
+  author-info: (
+    name: "Your Name Here",
+    group-name: "Your Group Or Chair Here",
+    school-name: "Your School Here",
+  ),
+  title: "Your Title Here",
+  subtitle: none,
+) = [
   #check-author-info(author-info)
 
   #set text(font: tum-font)
@@ -68,6 +76,11 @@
 #let dissertation-title = "Evaluation of Elastic Applications in HPC"
 #let dissertation-subtitle = "Subtitle of the thesis"
 
-#print-cover(my-info, dissertation-title, subtitle: dissertation-subtitle)
+#print-cover(
+  author-info: my-info,
+  title: dissertation-title,
+  subtitle: dissertation-subtitle,
+)
 
-#print-cover(my-info, dissertation-title)
+#print-cover(author-info: my-info, title: dissertation-title)
+#print-cover()
