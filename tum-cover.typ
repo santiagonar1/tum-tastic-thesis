@@ -63,7 +63,6 @@
   name: "Santiago Narváez Rivas",
   group-name: "Chair of Scientific Computing",
   school-name: "TUM School of Computation, Information and Technology",
-  university-name: "Technical University of Munich",
 )
 
 #let dissertation-title = "Evaluation of Elastic Applications in HPC"
