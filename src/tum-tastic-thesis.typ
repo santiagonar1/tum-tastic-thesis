@@ -24,6 +24,18 @@
       }
     },
   )
+
+  // Format figure counting as chapter.#fig
+  set figure(numbering: it => {
+    let count = counter(heading.where(level: 1)).at(here()).first()
+    if count > 0 {
+      numbering("1.1", count, it)
+    } else {
+      numbering("1", it)
+    }
+  })
+
+
   set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
@@ -31,8 +43,11 @@
   set heading(numbering: "1.1")
 
   show heading.where(level: 1): it => {
-    // For each chapter we need to reset the equation, figure, and table.
+    // For each chapter we need to reset the equation, figure.
     counter(math.equation).update(0)
+    counter(figure.where(kind:image)).update(0)
+	  counter(figure.where(kind:table)).update(0)
+
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
     strong(it)

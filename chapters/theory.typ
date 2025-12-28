@@ -10,9 +10,24 @@
 #let content = [
   = Theory
   Here is an example of a citation @lamport1994latex. One can also have multiple
-  citations @lamport1994latex @knuth1990literate.
+  citations @lamport1994latex @knuth1990literate. @eq:theory shows a link to an
+  equation.
 
-  $ a^2 + b^2 = c^2 $ <eq:theory-equation>
+  $ a^2 + b^2 = c^2 $ <eq:theory>
+
+  You can also insert figures here, as in @fig:curve.
+
+  #figure(
+    ellipse(width: 35%, height: 50pt),
+    caption: [Just an ellipse],
+  ) <fig:theory>
+
+  And of course also a table, as in @tab:theory.
+
+  #figure(
+    table(columns: 2)[A][B][C][D],
+    caption: [I'm up here],
+  ) <tab:theory>
 
   #insert-par(2)
 
