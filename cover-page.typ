@@ -1,7 +1,7 @@
 #import "tum-user.typ": check-author-info
 #import "tum-colors.typ": tum-colors
 #import "tum-font.typ": font-sizes, tum-font
-#import "tum-page.typ": cover-page-margins, tum-page
+#import "page-conf.typ": cover-page-margins, tum-page
 #import "tum-header.typ": three-liner-headline-with-logo, tum-logo-height
 
 #let print-cover(

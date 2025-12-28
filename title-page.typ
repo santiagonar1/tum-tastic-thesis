@@ -1,5 +1,5 @@
 #import "tum-header.typ": tum-logo-height, two-liner-headline-with-logo
-#import "tum-page.typ": title-page-margins, tum-page
+#import "page-conf.typ": title-page-margins, tum-page
 #import "tum-font.typ": font-sizes, tum-font
 #import "tum-colors.typ": tum-colors
 #import "university-names.typ": tum-name
