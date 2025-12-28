@@ -62,6 +62,7 @@
   date-accepted: datetime.today(),
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
+  show-cover: true,
   doc,
 ) = {
   let print-empty-page() = [
@@ -73,8 +74,10 @@
   set document(title: title, author: author-info.name, date: datetime.today())
 
   // ----------- Preamble -----------
-  print-cover(author-info: author-info, title: title, subtitle: subtitle)
-  print-empty-page()
+  if show-cover {
+    print-cover(author-info: author-info, title: title, subtitle: subtitle)
+    print-empty-page()
+  }
 
   print-dissertation-title(
     author-info: author-info,
