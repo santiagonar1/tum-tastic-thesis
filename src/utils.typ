@@ -12,15 +12,13 @@
 
 #let print-section-before-chapters(title: "Title", body) = [
   // --------------  Sets  --------------
-  #set text(font: tum-font)
+  #set text(font: tum-font, size: font-sizes.base)
 
   #let margins = content-page-margins
   #set page(
     paper: tum-page.type,
     margin: margins,
   )
-
-  #set text(font: tum-font)
 
   #set par(justify: true, first-line-indent: first-line-indent)
 
