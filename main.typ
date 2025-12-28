@@ -1,5 +1,7 @@
 #import "src/tum-tastic-thesis.typ": dissertation
 
+#import "chapters/theory.typ" as chapter
+
 #show: dissertation.with(bib-sources: "/bibliography.bib")
 
 // ----------- Chapters -----------
@@ -23,3 +25,6 @@ citations @lamport1994latex @knuth1990literate.
 
 ==== Yet another section
 #lorem(20)
+
+#pagebreak()
+#chapter.content
