@@ -24,6 +24,6 @@
   #insert-par(4)
 ]
 
-#show: chapter.with()
+#show: chapter.with(show-index: true)
 
 #content

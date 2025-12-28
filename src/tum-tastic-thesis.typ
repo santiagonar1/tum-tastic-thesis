@@ -7,7 +7,7 @@
 #import "content-page.typ": print-index
 #import "bibliography-page.typ": print-bibliography
 
-#let chapter(doc) = {
+#let chapter(show-index: false, doc) = {
   // ----------- Sets -----------
   counter(page).update(1)
   set page(numbering: "1")
@@ -40,6 +40,11 @@
   show heading.where(level: 4): it => {
     set text(font: tum-font, size: font-sizes.h4)
     strong(it)
+  }
+
+  if show-index {
+    print-index()
+    pagebreak()
   }
 
   doc
