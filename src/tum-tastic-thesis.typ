@@ -8,6 +8,8 @@
 
 #let chapter(doc) = {
   // ----------- Sets -----------
+  counter(page).update(1)
+  set page(numbering: "1")
   set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
@@ -84,6 +86,8 @@
     date-accepted: date-accepted,
   )
   print-empty-page()
+
+  set page(numbering: "i")
 
   print-acknowledgements(acknowledgements)
   print-empty-page()
