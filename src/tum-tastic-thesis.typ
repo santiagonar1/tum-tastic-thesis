@@ -29,12 +29,12 @@
     #pagebreak()
     #pagebreak()
   ]
-
+  
   // ----------- Preamble -----------
-
+  
   print-cover(author-info: author-info, title: title, subtitle: subtitle)
   print-empty-page()
-
+  
   print-dissertation-title(
     author-info: author-info,
     dissertation-title: title,
@@ -45,62 +45,40 @@
     date-accepted: date-accepted,
   )
   print-empty-page()
-
+  
   print-acknowledgements(acknowledgements)
   print-empty-page()
-
+  
   print-abstract(abstract)
-
+  
   // ----------- Sets -----------
   set par(justify: true, first-line-indent: first-line-indent)
-
+  
   set heading(numbering: "1.1")
-
+  
   show heading.where(level: 1): it => {
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
     strong(it)
     v(0.5em)
   }
-
+  
   show heading.where(level: 2): it => {
     set text(font: tum-font, size: font-sizes.h2)
     strong(it)
     v(0.4em)
   }
-
+  
   show heading.where(level: 3): it => {
     set text(font: tum-font, size: font-sizes.h3)
     strong(it)
     v(0.2em)
   }
-
+  
   show heading.where(level: 4): it => {
     set text(font: tum-font, size: font-sizes.h4)
     strong(it)
   }
-
+  
   doc
 }
-
-#show: dissertation.with()
-
-// ----------- Chapters -----------
-
-= Introduction
-#lorem(120)
-
-#lorem(12)
-
-== A section
-#lorem(120)
-
-#lorem(120)
-
-=== Another section
-#lorem(120)
-
-#lorem(120)
-
-==== Yet another section
-#lorem(20)
