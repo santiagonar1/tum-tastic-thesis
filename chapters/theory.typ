@@ -11,6 +11,9 @@
   = Theory
   Here is an example of a citation @lamport1994latex. One can also have multiple
   citations @lamport1994latex @knuth1990literate.
+
+  $ a^2 + b^2 = c^2 $ <eq:theory-equation>
+
   #insert-par(2)
 
   == A theory in detail

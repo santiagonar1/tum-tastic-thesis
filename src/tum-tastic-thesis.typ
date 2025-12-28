@@ -9,9 +9,21 @@
 
 #let chapter(show-index: false, bib-sources: none, doc) = {
   // ----------- Sets -----------
+  // Format page count
   counter(page).update(1)
   set page(numbering: "1")
-  set math.equation(numbering: "(1)")
+
+  // Format equation counting as (chapter.#eq)
+  set math.equation(
+    numbering: it => {
+      let count = counter(heading.where(level: 1)).at(here()).first()
+      if count > 0 {
+        numbering("(1.1)", count, it)
+      } else {
+        numbering("(1)", it)
+      }
+    },
+  )
   set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
@@ -19,6 +31,8 @@
   set heading(numbering: "1.1")
 
   show heading.where(level: 1): it => {
+    // For each chapter we need to reset the equation, figure, and table.
+    counter(math.equation).update(0)
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
     strong(it)
