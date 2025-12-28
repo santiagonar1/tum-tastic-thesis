@@ -23,12 +23,9 @@
   date-submitted: datetime.today(),
   date-accepted: datetime.today(),
 ) = [
-
-  #set text(font: tum-font)
-
+  // -------------- Checks --------------
   #check-author-info(author-info)
   #check-committee-info(committee-info)
-  #let margins = title-page-margins
 
   #if date-submitted > date-accepted [
     #let error-msg = (
@@ -41,11 +38,16 @@
     #panic(error-msg)
   ]
 
+  // --------------  Sets  --------------
+  #set text(font: tum-font)
+
+  #let margins = title-page-margins
   #set page(
     paper: tum-page.type,
     margin: margins,
   )
 
+  // -------------- Content --------------
   #two-liner-headline-with-logo(author-info, top + left)
 
   #let make_title = (my-title, subtitle: none) => [
@@ -72,7 +74,6 @@
   #let content-height = tum-page.height - margins.top - margins.bottom
   #let content-width = tum-page.width - margins.left - margins.right
   #let half-page = 0.5 * content-height
-
 
   #let fine-print-block = [
     Vollständiger Abdruck der von der TUM School of Computation, Information and

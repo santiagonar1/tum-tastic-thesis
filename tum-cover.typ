@@ -1,7 +1,7 @@
 #import "tum-user.typ": check-author-info
 #import "tum-colors.typ": tum-colors
 #import "tum-font.typ": font-sizes, tum-font
-#import "tum-page.typ": tum-page, cover-page-margins
+#import "tum-page.typ": cover-page-margins, tum-page
 #import "tum-header.typ": three-liner-headline-with-logo, tum-logo-height
 
 #let print-cover(
@@ -13,17 +13,20 @@
   title: "Your Title Here",
   subtitle: none,
 ) = [
+  // -------------- Checks --------------
   #check-author-info(author-info)
-  #let margins = cover-page-margins
 
+  // --------------  Sets  --------------
   #set text(font: tum-font)
 
+  #let margins = cover-page-margins
   #set page(
     paper: tum-page.type,
     header: three-liner-headline-with-logo(author-info),
     margin: margins,
   )
 
+  // -------------- Content --------------
   #let make_title = (my-title, subtitle: none) => [
     #v(tum-logo-height)
     #text(size: font-sizes.h1, weight: "bold")[
