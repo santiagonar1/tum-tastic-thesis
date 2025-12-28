@@ -92,8 +92,10 @@
 
   set page(numbering: "i")
 
-  print-acknowledgements(acknowledgements)
-  print-empty-page()
+  if acknowledgements != none {
+    print-acknowledgements(acknowledgements)
+    print-empty-page()
+  }
 
   print-abstract(abstract)
   pagebreak()
