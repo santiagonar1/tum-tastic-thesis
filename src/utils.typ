@@ -17,7 +17,7 @@
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
     strong(it)
-    v(0.5em)
+    v(1em)
   }
 
   = #title

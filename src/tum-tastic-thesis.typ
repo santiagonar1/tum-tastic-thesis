@@ -18,19 +18,20 @@
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
     strong(it)
-    v(0.5em)
+    v(1em)
   }
 
   show heading.where(level: 2): it => {
     set text(font: tum-font, size: font-sizes.h2)
+    v(0.2em)
     strong(it)
-    v(0.4em)
+    v(0.6em)
   }
 
   show heading.where(level: 3): it => {
     set text(font: tum-font, size: font-sizes.h3)
     strong(it)
-    v(0.2em)
+    v(0.3em)
   }
 
   show heading.where(level: 4): it => {
