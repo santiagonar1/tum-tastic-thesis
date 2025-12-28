@@ -10,7 +10,20 @@
   ]
 }
 
-#let print-section-before-chapters(title: "Title", body) = [
+#let format-title-section-before-chapters(title: [Title]) = [
+  #set heading(numbering: none)
+
+  #show heading.where(level: 1): it => {
+    set text(font: tum-font, size: font-sizes.h1)
+    v(2em)
+    strong(it)
+    v(0.5em)
+  }
+
+  = #title
+]
+
+#let print-section-before-chapters(title: [Title], body) = [
   // --------------  Sets  --------------
   #set text(font: tum-font, size: font-sizes.base)
 
@@ -21,17 +34,8 @@
   )
 
   #set par(justify: true, first-line-indent: first-line-indent)
-
-  #set heading(numbering: none)
-
-  #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
-    v(2em)
-    strong(it)
-    v(0.5em)
-  }
   // -------------- Content --------------
 
-  = #title
+  #format-title-section-before-chapters(title: title)
   #body
 ]

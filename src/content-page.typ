@@ -1,4 +1,5 @@
 #import "tum-font.typ": font-sizes, tum-font
+#import "utils.typ": format-title-section-before-chapters
 
 #let print-index() = [
   #show outline.entry.where(level: 1): it => link(
@@ -12,14 +13,6 @@
 
   #show outline.entry: set text(font: tum-font, size: font-sizes.base)
 
-  #let outline-title = [
-    #show heading.where(level: 1): it => {
-      set text(font: tum-font, size: font-sizes.h1)
-      v(2em)
-      strong(it)
-      v(0.5em)
-    }
-    = Contents
-  ]
+  #let outline-title = format-title-section-before-chapters(title: [Content])
   #outline(title: outline-title)
 ]
