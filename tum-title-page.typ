@@ -1,5 +1,5 @@
 #import "tum-header.typ": tum-logo-height, two-liner-headline-with-logo
-#import "tum-page.typ": tum-page
+#import "tum-page.typ": title-page-margins, tum-page
 #import "tum-font.typ": font-sizes, tum-font
 #import "tum-colors.typ": tum-colors
 #import "university-names.typ": tum-name
@@ -27,6 +27,7 @@
 ) = [
   #check-author-info(author-info)
   #check-committee-info(committee-info)
+  #let margins = title-page-margins
 
   #if date-submitted > date-accepted [
     #let error-msg = (
@@ -38,13 +39,6 @@
     )
     #panic(error-msg)
   ]
-
-  #let margins = (
-    top: 3 * tum-logo-height,
-    bottom: 2 * tum-logo-height,
-    left: 2 * tum-logo-height,
-    right: 2 * tum-logo-height,
-  )
 
   #set page(
     paper: tum-page.type,

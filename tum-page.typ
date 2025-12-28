@@ -13,6 +13,13 @@
   right: tum-logo-height,
 )
 
+#let title-page-margins = (
+  top: 3 * tum-logo-height,
+  bottom: 2 * tum-logo-height,
+  left: 2 * tum-logo-height,
+  right: 2 * tum-logo-height,
+)
+
 // ----- Heading styles -----
 #show heading.where(level: 1): it => {
   set text(font: tum-font, size: font-sizes.h1, fill: TUMBlue)
