@@ -11,6 +11,7 @@
   // ----------- Sets -----------
   counter(page).update(1)
   set page(numbering: "1")
+  set math.equation(numbering: "(1)")
   set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
