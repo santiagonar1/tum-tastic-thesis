@@ -1,4 +1,4 @@
-#import "tum-user.typ": check-author-info
+#import "author-info.typ": check-author-info
 #import "tum-colors.typ": tum-colors
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": cover-page-margins, tum-page

@@ -4,7 +4,7 @@
 #import "tum-colors.typ": tum-colors
 #import "university-names.typ": tum-name
 #import "committee-information.typ": check-committee-info
-#import "tum-user.typ": check-author-info
+#import "author-info.typ": check-author-info
 
 #let print-dissertation-title(
   author-info: (
