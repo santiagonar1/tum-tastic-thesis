@@ -7,7 +7,7 @@
 
 #let chapter(doc) = {
   // ----------- Sets -----------
-  set text(font: tum-font)
+  set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
 
