@@ -35,6 +35,8 @@
     }
   })
 
+  set figure(gap: 1em)
+
 
   set text(font: tum-font, size: font-sizes.base)
 
