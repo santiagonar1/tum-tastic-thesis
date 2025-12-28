@@ -12,7 +12,7 @@
     group-name: "Your Group Or Chair Here",
     school-name: "Your School Here",
   ),
-  dissertation-title: "Your Title Here",
+  dissertation-title: [Your Title Here],
   subtitle: none,
   degree-name: "Dr. In Something",
   committee-info: (
@@ -135,8 +135,8 @@
   second-evaluator: "Prof. Second Evaluator Here",
 )
 
-#let dissertation-title = "Evaluation of Elastic Applications in HPC"
-#let subtitle = "Subtitle of the thesis"
+#let dissertation-title = [Evaluation of Elastic Applications in HPC]
+#let subtitle = [Subtitle of the thesis]
 #let degree-name = "Doktors der Naturwissenschaften (Dr. rer. nat.)"
 
 #let date-submitted = datetime(

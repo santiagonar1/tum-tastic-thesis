@@ -11,7 +11,7 @@
     group-name: "Your Group Or Chair Here",
     school-name: "Your School Here",
   ),
-  title: "Your Title Here",
+  title: [Your Title Here],
   subtitle: none,
   degree-name: "Dr. In Something",
   committee-info: (
