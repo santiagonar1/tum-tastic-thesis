@@ -25,6 +25,15 @@
     },
   )
 
+  // Format figure caption
+  show figure.caption: it => [
+    #text(weight: "bold")[
+      #it.supplement
+      #it.counter.display(it.numbering)
+    ]
+    #it.body
+  ]
+
   // Format figure counting as chapter.#fig
   set figure(numbering: it => {
     let count = counter(heading.where(level: 1)).at(here()).first()
@@ -37,7 +46,6 @@
 
   set figure(gap: 1em)
 
-
   set text(font: tum-font, size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
@@ -47,8 +55,8 @@
   show heading.where(level: 1): it => {
     // For each chapter we need to reset the equation, figure.
     counter(math.equation).update(0)
-    counter(figure.where(kind:image)).update(0)
-	  counter(figure.where(kind:table)).update(0)
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
 
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
