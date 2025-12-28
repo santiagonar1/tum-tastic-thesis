@@ -5,9 +5,10 @@
 #show: dissertation.with(bib-sources: "/bibliography.bib")
 
 // ----------- Chapters -----------
-= Introduction
+= Introduction <ch:intro>
 Here is an example of a citation @lamport1994latex. One can also have multiple
-citations @lamport1994latex @knuth1990literate. You can also mention things like @fig:curve, @tab:table, or @eq:equation.
+citations @lamport1994latex @knuth1990literate. You can also mention things like
+@fig:curve, @tab:table, or @eq:equation.
 
 #figure(
   curve(
@@ -21,7 +22,10 @@ citations @lamport1994latex @knuth1990literate. You can also mention things like
   caption: [Just a curve],
 ) <fig:curve>
 
-#lorem(40)
+The remaining sections in this Chapter, such as @ch:intro:section, just have
+gibberish. Although @ch:intro was written directly in the `main.typ` file,
+@ch:theory is provided in a separate file. Check both the PDF and the code to
+see some interesting facts about this.
 
 #figure(
   table(columns: 2)[A][B][C][D],
@@ -32,9 +36,7 @@ citations @lamport1994latex @knuth1990literate. You can also mention things like
 
 $ a^2 + b^2 = c^2 $ <eq:equation>
 
-
-
-== A section
+== A section <ch:intro:section>
 #lorem(120)
 
 #lorem(120)

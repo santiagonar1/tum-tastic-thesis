@@ -44,6 +44,9 @@
     }
   })
 
+  // Call level 1 headings Chapter instead of Section
+  show heading.where(level: 1): set heading(supplement: [Chapter])
+
   set figure(gap: 1em)
 
   set text(font: tum-font, size: font-sizes.base)

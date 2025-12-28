@@ -8,7 +8,7 @@
 }
 
 #let content = [
-  = Theory
+  = Theory <ch:theory>
   Here is an example of a citation @lamport1994latex. One can also have multiple
   citations @lamport1994latex @knuth1990literate. @eq:theory shows a link to an
   equation.
