@@ -4,6 +4,7 @@
 #import "acknowledgements-page.typ": print-acknowledgements
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
+#import "content-page.typ": print-index
 
 #let chapter(doc) = {
   // ----------- Sets -----------
@@ -87,6 +88,10 @@
   print-empty-page()
 
   print-abstract(abstract)
+  pagebreak()
+
+  print-index()
+  pagebreak()
 
   // ----------- Chapters -----------
   show: chapter.with()
