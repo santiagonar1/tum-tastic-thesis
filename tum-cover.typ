@@ -1,7 +1,7 @@
 #import "tum-user.typ": check-author-info
 #import "tum-colors.typ": tum-colors
 #import "tum-font.typ": font-sizes, tum-font
-#import "tum-page.typ": tum-page
+#import "tum-page.typ": tum-page, cover-page-margins
 #import "tum-header.typ": three-liner-headline-with-logo, tum-logo-height
 
 #let print-cover(
@@ -14,15 +14,9 @@
   subtitle: none,
 ) = [
   #check-author-info(author-info)
+  #let margins = cover-page-margins
 
   #set text(font: tum-font)
-
-  #let margins = (
-    top: 3 * tum-logo-height,
-    bottom: tum-logo-height,
-    left: tum-logo-height,
-    right: tum-logo-height,
-  )
 
   #set page(
     paper: tum-page.type,

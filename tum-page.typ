@@ -1,7 +1,16 @@
+#import "tum-header.typ": tum-logo-height
+
 #let tum-page = (
   type: "a4",
   height: 297mm,
   width: 210mm,
+)
+
+#let cover-page-margins = (
+  top: 3 * tum-logo-height,
+  bottom: tum-logo-height,
+  left: tum-logo-height,
+  right: tum-logo-height,
 )
 
 // ----- Heading styles -----
