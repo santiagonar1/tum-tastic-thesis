@@ -97,8 +97,10 @@
     print-empty-page()
   }
 
-  print-abstract(abstract)
-  pagebreak()
+  if abstract != none {
+    print-abstract(abstract)
+    pagebreak()
+  }
 
   print-index()
   pagebreak()
