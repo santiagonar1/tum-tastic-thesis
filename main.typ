@@ -1,9 +1,12 @@
 #import "src/tum-tastic-thesis.typ": dissertation
 
-#show: dissertation.with()
+#show: dissertation.with(bib-sources: "/bibliography.bib")
 
 // ----------- Chapters -----------
 = Introduction
+Here is an example of a citation @lamport1994latex. One can also have multiple
+citations @lamport1994latex @knuth1990literate.
+
 #lorem(120)
 
 #lorem(12)

@@ -63,6 +63,7 @@
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
   show-cover: true,
+  bib-sources: "/bibliography.bib",
   doc,
 ) = {
   let print-empty-page() = [
@@ -109,4 +110,11 @@
   show: chapter.with()
 
   doc
+
+  pagebreak()
+  if not bib-sources.starts-with("/") {
+    bibliography("/" + bib-sources)
+  } else {
+    bibliography(bib-sources)
+  }
 }

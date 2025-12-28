@@ -20,6 +20,25 @@
       ],
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "label": "Format with latexindent",
+      "type": "shell",
+      "command": "latexindent",
+      "args": [
+        "-w", // this flag overwrites the file
+        "-s", // to make overwrite silet
+        "-c",
+        "/tmp/latexindent", // do not store backup
+        "-y",
+        "\"onlyOneBackUp: 1\"",
+        "${file}" // passes the currently open file
+      ],
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      },
+      "problemMatcher": []
     }
   ]
 }
