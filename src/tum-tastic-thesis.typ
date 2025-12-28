@@ -5,6 +5,7 @@
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
 #import "content-page.typ": print-index
+#import "bibliography-page.typ": print-bibliography
 
 #let chapter(doc) = {
   // ----------- Sets -----------
@@ -112,9 +113,5 @@
   doc
 
   pagebreak()
-  if not bib-sources.starts-with("/") {
-    bibliography("/" + bib-sources)
-  } else {
-    bibliography(bib-sources)
-  }
+  print-bibliography(bib-sources)
 }
