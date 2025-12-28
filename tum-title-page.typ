@@ -6,8 +6,6 @@
 #import "committee-information.typ": check-committee-info
 #import "tum-user.typ": check-author-info
 
-#set text(font: tum-font)
-
 #let print-dissertation-title(
   author-info: (
     name: "Your Name Here",
@@ -25,6 +23,9 @@
   date-submitted: datetime.today(),
   date-accepted: datetime.today(),
 ) = [
+
+  #set text(font: tum-font)
+
   #check-author-info(author-info)
   #check-committee-info(committee-info)
   #let margins = title-page-margins
