@@ -27,6 +27,8 @@
   right: 2 * tum-logo-height,
 )
 
+#let first-line-indent = 1em
+
 // ----- Heading styles -----
 #show heading.where(level: 1): it => {
   set text(font: tum-font, size: font-sizes.h1, fill: TUMBlue)

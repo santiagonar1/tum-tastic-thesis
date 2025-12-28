@@ -1,4 +1,4 @@
-#import "page-conf.typ": content-page-margins, tum-page
+#import "page-conf.typ": content-page-margins, first-line-indent, tum-page
 #import "tum-font.typ": font-sizes, tum-font
 
 #let print-abstract(body) = [
@@ -12,7 +12,7 @@
   )
 
   #set text(font: tum-font)
-  #set par(justify: true, first-line-indent: 1em)
+  #set par(justify: true, first-line-indent: first-line-indent)
 
   // -------------- Content --------------
   #show heading.where(level: 1): it => {
