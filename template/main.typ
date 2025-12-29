@@ -15,4 +15,4 @@
 
 // Print bibliography
 #pagebreak()
-#bibliography("/bibliography.bib")
+#bibliography("bibliography.bib")
