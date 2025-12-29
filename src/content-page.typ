@@ -29,3 +29,5 @@
   // --------------  Content  --------------
   #outline(title: [Content])
 ]
+
+#print-index()
