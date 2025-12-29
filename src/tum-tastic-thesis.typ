@@ -66,6 +66,7 @@
     counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
 
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
