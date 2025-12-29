@@ -2,6 +2,7 @@
 #import "utils.typ": format-title-section-before-chapters
 
 #let print-index() = [
+  // --------------  Sets  --------------
   #show outline.entry.where(level: 1): it => link(
     it.element.location(),
     it.indented(it.prefix(), text(
@@ -13,6 +14,6 @@
 
   #show outline.entry: set text(font: tum-font, size: font-sizes.base)
 
-  #let outline-title = format-title-section-before-chapters(title: [Content])
-  #outline(title: outline-title)
+  // --------------  Content  --------------
+  #outline(title: [Content])
 ]
