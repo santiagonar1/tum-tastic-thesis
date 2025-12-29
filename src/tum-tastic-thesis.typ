@@ -4,10 +4,15 @@
 #import "acknowledgements-page.typ": print-acknowledgements
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
-#import "content-page.typ": print-figure-index, print-index
+#import "content-page.typ": print-figure-index, print-index, print-table-index
 #import "bibliography-page.typ": print-bibliography
 
-#let chapter(show-index: false, show-figures-index: false, doc) = {
+#let chapter(
+  show-index: false,
+  show-figures-index: false,
+  show-table-index: false,
+  doc,
+) = {
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
@@ -102,13 +107,18 @@
   doc
 
   // --------After content ---------
+
   // Note: it is important for the pagebreak() to be before any printing,
   // as otherwise typst might think that the page belongs to whatever
   // previous section the doc had last
-
   if show-figures-index {
     pagebreak()
     print-figure-index()
+  }
+
+  if show-table-index {
+    pagebreak()
+    print-table-index()
   }
 }
 
@@ -132,6 +142,7 @@
   abstract: [#lorem(100)],
   show-cover: true,
   show-figures-index: true,
+  show-table-index: true,
   bib-sources: "/bibliography.bib",
   doc,
 ) = {
@@ -187,5 +198,10 @@
   if show-figures-index {
     pagebreak()
     print-figure-index()
+  }
+
+  if show-table-index {
+    pagebreak()
+    print-table-index()
   }
 }
