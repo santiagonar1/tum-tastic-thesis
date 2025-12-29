@@ -1,6 +1,6 @@
 #import "src/tum-tastic-thesis.typ": dissertation
 
-#import "chapters/theory.typ" as chapter
+#import "chapters/theory.typ" as theory
 
 #show: dissertation.with(bib-sources: "/bibliography.bib")
 
@@ -50,4 +50,4 @@ $ a^2 + b^2 = c^2 $ <eq:equation>
 #lorem(20)
 
 #pagebreak()
-#chapter.content
+#theory.content
