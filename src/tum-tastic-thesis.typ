@@ -4,10 +4,10 @@
 #import "acknowledgements-page.typ": print-acknowledgements
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
-#import "content-page.typ": print-index, print-figure-index
+#import "content-page.typ": print-figure-index, print-index
 #import "bibliography-page.typ": print-bibliography
 
-#let chapter(show-index: false, doc) = {
+#let chapter(show-index: false, show-figures-index: false, doc) = {
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
@@ -98,6 +98,11 @@
   }
 
   doc
+
+  if show-figures-index {
+    pagebreak()
+    print-figure-index()
+  }
 }
 
 #let dissertation(
@@ -119,6 +124,7 @@
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
   show-cover: true,
+  show-figures-index: true,
   bib-sources: "/bibliography.bib",
   doc,
 ) = {
@@ -171,7 +177,8 @@
   pagebreak()
   print-bibliography(bib-sources)
 
-
-  print-figure-index()
-  pagebreak()
+  if show-figures-index {
+    pagebreak()
+    print-figure-index()
+  }
 }
