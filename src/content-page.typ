@@ -53,3 +53,4 @@
 ]
 
 #print-index()
+#print-figure-index()
