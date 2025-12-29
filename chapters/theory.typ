@@ -1,4 +1,4 @@
-#import "../src/tum-tastic-thesis.typ": chapter, print-bibliography
+#import "../src/tum-tastic-thesis.typ": chapter
 
 #let insert-par(num-par) = {
   while num-par > 0 {
