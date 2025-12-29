@@ -2,7 +2,7 @@
 
 #import "chapters/theory.typ" as theory
 
-#show: dissertation.with(bib-sources: "/bibliography.bib")
+#show: dissertation.with()
 
 // ----------- Chapters -----------
 = Introduction <ch:intro>
@@ -51,3 +51,6 @@ $ a^2 + b^2 = c^2 $ <eq:equation>
 
 #pagebreak()
 #theory.content
+
+#pagebreak()
+#bibliography("/bibliography.bib")

@@ -5,7 +5,6 @@
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
 #import "content-page.typ": *
-#import "bibliography-page.typ": print-bibliography
 
 // Nice function to enable short and longer descriptions of figures.
 // The short one will be displayed in the outline, the long one in
@@ -163,7 +162,6 @@
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
-  bib-sources: "/bibliography.bib",
   doc,
 ) = {
   let print-empty-page() = [
@@ -206,15 +204,12 @@
   print-index()
   pagebreak()
 
-  // ----------- Chapters -----------
+  // ----------- Content -----------
   show: chapter.with()
 
   doc
 
-  // --------- After Chapters -------
-  pagebreak()
-  print-bibliography(bib-sources)
-
+  // --------- After Content -------
   if show-figures-index {
     pagebreak()
     print-figure-index()
