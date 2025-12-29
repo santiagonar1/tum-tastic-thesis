@@ -34,6 +34,14 @@
   // --------------  Sets  --------------
   #show outline.entry: set text(font: tum-font, size: font-sizes.base)
 
+  // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
+  #let in-outline = state("in-outline", false)
+  #show outline: it => {
+    in-outline.update(true)
+    it
+    in-outline.update(false)
+  }
+
   // We need this to show this on the Content page
   #show outline: set heading(outlined: true)
 
@@ -56,6 +64,14 @@
   // --------------  Sets  --------------
   #show outline.entry: set text(font: tum-font, size: font-sizes.base)
 
+  // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
+  #let in-outline = state("in-outline", false)
+  #show outline: it => {
+    in-outline.update(true)
+    it
+    in-outline.update(false)
+  }
+
   // We need this to show this on the Content page
   #show outline: set heading(outlined: true)
 
@@ -77,6 +93,14 @@
 #let print-listing-index() = [
   // --------------  Sets  --------------
   #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+
+  // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
+  #let in-outline = state("in-outline", false)
+  #show outline: it => {
+    in-outline.update(true)
+    it
+    in-outline.update(false)
+  }
 
   // We need this to show this on the Content page
   #show outline: set heading(outlined: true)

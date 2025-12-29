@@ -7,6 +7,19 @@
 #import "content-page.typ": *
 #import "bibliography-page.typ": print-bibliography
 
+// Nice function to enable short and longer descriptions of figures.
+// The short one will be displayed in the outline, the long one in
+// the figure caption.
+//
+// Taken from:
+//  - https://github.com/typst/typst/issues/1295#issuecomment-2749005636
+#let flex-caption(short: none, long: none) = context if state(
+  "in-outline",
+  false,
+).get() {
+  short
+} else { long }
+
 #let chapter(
   show-index: false,
   show-figures-index: false,
