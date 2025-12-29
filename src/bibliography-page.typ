@@ -10,8 +10,9 @@
   }
 
   #if not bib-sources.starts-with("/") {
-    bibliography("/" + bib-sources)
-  } else {
-    bibliography(bib-sources)
+    let error-msg = "[print-bibliography] bib-source should be an absolute path from root project"
+    panic(error-msg)
   }
+
+  #bibliography(bib-sources)
 ]
