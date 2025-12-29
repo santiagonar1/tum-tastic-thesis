@@ -92,12 +92,19 @@
     strong(it)
   }
 
+  // ----------- Preamble -----------
   if show-index {
     print-index()
     pagebreak()
   }
 
+  // ----------- Content -----------
   doc
+
+  // --------After content ---------
+  // Note: it is important for the pagebreak() to be before any printing,
+  // as otherwise typst might think that the page belongs to whatever
+  // previous section the doc had last
 
   if show-figures-index {
     pagebreak()
