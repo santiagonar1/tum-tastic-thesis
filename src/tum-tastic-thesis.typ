@@ -4,7 +4,7 @@
 #import "acknowledgements-page.typ": print-acknowledgements
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
-#import "content-page.typ": print-index
+#import "content-page.typ": print-index, print-figure-index
 #import "bibliography-page.typ": print-bibliography
 
 #let chapter(show-index: false, doc) = {
@@ -167,6 +167,11 @@
 
   doc
 
+  // --------- After Chapters -------
   pagebreak()
   print-bibliography(bib-sources)
+
+
+  print-figure-index()
+  pagebreak()
 }
