@@ -74,6 +74,29 @@
   #outline(title: [List of Tables], target: figure.where(kind: table))
 ]
 
+#let print-listing-index() = [
+  // --------------  Sets  --------------
+  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+
+  // We need this to show this on the Content page
+  #show outline: set heading(outlined: true)
+
+  // We need to reset the show rule in case this is called from a document
+  // where this was already set. Otherwise both rules will stack
+  #show heading.where(level: 1): it => it.body
+
+  #show heading.where(level: 1): it => {
+    set text(font: tum-font, size: font-sizes.h1)
+    v(2em)
+    strong(it)
+    v(1em)
+  }
+
+  // --------------  Content  --------------
+  #outline(title: [List of Listings], target: figure.where(kind: raw))
+]
+
 #print-index()
 #print-figure-index()
 #print-table-index()
+#print-listing-index()

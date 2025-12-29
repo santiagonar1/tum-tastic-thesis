@@ -4,13 +4,14 @@
 #import "acknowledgements-page.typ": print-acknowledgements
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
-#import "content-page.typ": print-figure-index, print-index, print-table-index
+#import "content-page.typ": *
 #import "bibliography-page.typ": print-bibliography
 
 #let chapter(
   show-index: false,
   show-figures-index: false,
   show-table-index: false,
+  show-listing-index: false,
   doc,
 ) = {
   // ----------- Sets -----------
@@ -120,6 +121,11 @@
     pagebreak()
     print-table-index()
   }
+
+  if show-listing-index {
+    pagebreak()
+    print-listing-index()
+  }
 }
 
 #let dissertation(
@@ -143,6 +149,7 @@
   show-cover: true,
   show-figures-index: true,
   show-table-index: true,
+  show-listing-index: true,
   bib-sources: "/bibliography.bib",
   doc,
 ) = {
@@ -203,5 +210,10 @@
   if show-table-index {
     pagebreak()
     print-table-index()
+  }
+
+  if show-listing-index {
+    pagebreak()
+    print-listing-index()
   }
 }
