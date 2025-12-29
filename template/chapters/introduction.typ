@@ -12,6 +12,11 @@
   }
 }
 
+#import "@preview/abbr:0.3.0"
+
+#show: abbr.show-rule
+#abbr.load("../abbreviations.csv")
+
 #show: chapter.with(
   show-index: true,
   show-figures-index: true,
@@ -32,7 +37,8 @@
   Check references style: @ch:introduction, @intro:sec:first and
   @intro:sec:second. Also @intro:subsec:first and @intro:subsec:second.
   Bibliography does not work when compiling a standalone chapter:
-  @knuth1990literate @lamport1994latex
+  @knuth1990literate @lamport1994latex. We can also have smart abbreviations,
+  like @PDE and @PDE.
 
   #insert-par(3)
 

@@ -12,6 +12,11 @@
   }
 }
 
+#import "@preview/abbr:0.3.0"
+
+#show: abbr.show-rule
+#abbr.load("../abbreviations.csv")
+
 #show: chapter.with(
   show-index: true,
   show-figures-index: true,
@@ -31,7 +36,8 @@
   = Theory <ch:theory>
   Check references style: @ch:theory, @theory:sec:first and @theory:sec:second.
   Also @theory:subsec:first and @theory:subsec:second. Bibliography does not
-  work when compiling a standalone chapter: @knuth1990literate @lamport1994latex
+  work when compiling a standalone chapter: @knuth1990literate
+  @lamport1994latex. We can also have smart abbreviations, like @PDE and @PDE.
 
   #insert-par(3)
 
