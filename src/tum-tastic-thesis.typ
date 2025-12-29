@@ -5,6 +5,7 @@
 #import "tum-font.typ": font-sizes, tum-font
 #import "page-conf.typ": first-line-indent
 #import "content-page.typ": *
+#import "tum-colors.typ": tum-colors
 
 // Nice function to enable short and longer descriptions of figures.
 // The short one will be displayed in the outline, the long one in
@@ -31,6 +32,15 @@
   counter(page).update(1)
   set page(numbering: "1")
 
+  // Format link
+  show link: it => {
+    // Only color blue for str, which usually are links
+    if type(it.dest) == str {
+      text(fill: tum-colors.blue)[#it.body]
+    } else {
+      it.body
+    }
+  }
   // Format raw text, used for code blocks
   show raw.where(block: true): it => {
     set block(inset: 5pt, fill: luma(240))
