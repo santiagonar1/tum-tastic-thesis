@@ -5,7 +5,7 @@
 #show: abbr.show-rule
 #abbr.load("abbreviations.csv")
 
-// Import here each chapter
+// Import each chapter here
 #import "chapters/theory.typ" as theory
 #import "chapters/introduction.typ" as introduction
 
@@ -25,5 +25,6 @@
 #pagebreak()
 #bibliography("bibliography.bib")
 
+// Print abbreviations
 #pagebreak()
 #abbr.list()
