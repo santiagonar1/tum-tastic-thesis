@@ -1,4 +1,4 @@
-#import "../src/tum-tastic-thesis.typ": chapter
+#import "../src/tum-tastic-thesis.typ": chapter, print-bibliography
 
 #let insert-par(num-par) = {
   while num-par > 0 {
@@ -7,29 +7,48 @@
   }
 }
 
+// Handle undefined references when compiling a chapter as a standalone document
+// You need to insert this at the beginning of each independent chapter
+#show ref: it => {
+  if it.element == none {
+    text(fill: red)[(??)]
+  } else {
+    it
+  }
+}
+
 #let content = [
   = Theory <ch:theory>
-  Here is an example of a citation @lamport1994latex. One can also have multiple
-  citations @lamport1994latex @knuth1990literate. @eq:theory shows a link to an
-  equation.
+  This Chapter is provided in a separate file. This is quite interesting, as our
+  *tum-tastic-thesis* provides the `chapter` template to allow compiling
+  chapters both as a standalone document, or as part of the whole thesis. An
+  issue that might occur when compiling this as a standalone document is that
+  some references will not be present. For example, if you compile this with the
+  thesis, the following reference will work: @ch:intro. If you are compiling
+  this as a separate document, that will display "#text(fill: red)[(??)]"
+  instead.
+
+  Sadly, this also affects for now the bibliography. The following citations
+  work when all the document is compiled, but fail when you compile this as a
+  standalone document: @lamport1994latex @knuth1990literate.
+
+  All other things should work as expected. We can have equations (see
+  @eq:theory), figures (see @fig:theory), and tables (see @tab:theory).
 
   $ a^2 + b^2 = c^2 $ <eq:theory>
 
-  You can also insert figures here, as in @fig:curve.
 
   #figure(
     ellipse(width: 35%, height: 50pt),
     caption: [Just an ellipse],
   ) <fig:theory>
 
-  And of course also a table, as in @tab:theory.
 
   #figure(
     table(columns: 2)[A][B][C][D],
     caption: [I'm up here],
   ) <tab:theory>
 
-  #insert-par(2)
 
   == A theory in detail
   #insert-par(4)
