@@ -1,7 +1,10 @@
-#import "../../src/tum-tastic-thesis.typ": chapter, flex-caption
+// ************* PASTE THIS ON EVERY STANDALONE DOCUMENT ***********************
 
-// Handle undefined references when compiling a chapter as a standalone document
-// You need to insert this at the beginning of each independent chapter. See
+#import "../../src/tum-tastic-thesis.typ": chapter, flex-caption
+#import "@preview/abbr:0.3.0"
+
+// Handle undefined references when compiling a chapter as a standalone
+// document. See:
 //  - https://github.com/typst/typst/issues/4524#issuecomment-2221803060
 //  - https://github.com/typst/typst/issues/1276#issuecomment-1560091418
 #show ref: it => {
@@ -12,8 +15,6 @@
   }
 }
 
-#import "@preview/abbr:0.3.0"
-
 #show: abbr.show-rule
 #abbr.load("../abbreviations.csv")
 
@@ -23,6 +24,8 @@
   show-table-index: true,
   show-listing-index: true,
 )
+
+// ************************ PASTE UNTIL HERE *********************************
 
 // Only here to generate random paragraphs of text
 #let insert-par(num-par) = {
