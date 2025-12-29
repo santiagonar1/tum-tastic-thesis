@@ -13,6 +13,12 @@
   counter(page).update(1)
   set page(numbering: "1")
 
+  // Format raw text, used for code blocks
+  show raw.where(block: true): it => {
+    set block(inset: 5pt, fill: luma(240))
+    pad(0.5em, it)
+  }
+
   // Format equation counting as (chapter.#eq)
   set math.equation(
     numbering: it => {
