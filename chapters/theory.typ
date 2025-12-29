@@ -63,6 +63,6 @@
   #insert-par(4)
 ]
 
-#show: chapter.with(show-index: true, bib-sources: "/bibliography.bib")
+#show: chapter.with(show-index: true)
 
 #content

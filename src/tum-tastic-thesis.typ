@@ -7,7 +7,7 @@
 #import "content-page.typ": print-index
 #import "bibliography-page.typ": print-bibliography
 
-#let chapter(show-index: false, bib-sources: none, doc) = {
+#let chapter(show-index: false, doc) = {
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
@@ -91,11 +91,6 @@
   }
 
   doc
-
-  if bib-sources != none {
-    pagebreak()
-    print-bibliography(bib-sources)
-  }
 }
 
 #let dissertation(
