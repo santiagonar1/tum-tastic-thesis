@@ -1,6 +1,8 @@
 // ************* PASTE THIS ON EVERY STANDALONE DOCUMENT ***********************
 
-#import "../../src/tum-tastic-thesis.typ": chapter, flex-caption
+#import "../../src/tum-tastic-thesis.typ": chapter
+#import "../../src/tum-tastic-thesis.typ": flex-caption
+#import "../../src/tum-tastic-thesis.typ": algorithm, d, i
 #import "@preview/abbr:0.3.0"
 
 // Handle undefined references when compiling a chapter as a standalone
@@ -105,6 +107,21 @@
     }
     ```,
     caption: [Amazing code snippet],
+  )
+
+  == An algorithm
+
+  #algorithm(
+    title: "Fib",
+    parameters: ("n",),
+    code: [
+      if $n < 0$:#i\ // use #i to indent the following lines
+      return null#d\ // use #d to dedent the following lines
+      if $n = 0$ or $n = 1$:#i \
+      return $n$#d \
+      return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+    ],
+    caption: [My algorithm],
   )
 
 ]

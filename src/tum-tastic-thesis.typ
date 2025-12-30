@@ -7,6 +7,29 @@
 #import "content-page.typ": *
 #import "tum-colors.typ": tum-colors
 
+#import "@preview/algo:0.3.6": algo, code, comment, d, i
+
+// ************************ FUNCTIONS *************************
+
+#let algorithm(
+  title: "My algorithm",
+  parameters: (),
+  code: [],
+  caption: [my caption],
+) = [
+  #figure(
+    algo(
+      title: title,
+      parameters: parameters,
+      fill: rgb(255, 244, 204),
+      code,
+    ),
+    caption: caption,
+    supplement: [Algorithm],
+    kind: "algorithm",
+  )
+]
+
 // Nice function to enable short and longer descriptions of figures.
 // The short one will be displayed in the outline, the long one in
 // the figure caption.
@@ -19,6 +42,8 @@
 ).get() {
   short
 } else { long }
+
+// ************************ TEMPLATES *************************
 
 #let chapter(
   show-index: false,
@@ -41,6 +66,7 @@
       it.body
     }
   }
+
   // Format raw text, used for code blocks
   show raw.where(block: true): it => {
     set block(inset: 5pt, fill: luma(240))
@@ -90,11 +116,12 @@
   set heading(numbering: "1.1")
 
   show heading.where(level: 1): it => {
-    // For each chapter we need to reset the equation, figure.
+    // For each chapter we need to reset these counters:.
     counter(math.equation).update(0)
     counter(figure.where(kind: image)).update(0)
     counter(figure.where(kind: table)).update(0)
     counter(figure.where(kind: raw)).update(0)
+    counter(figure.where(kind: "algorithm")).update(0)
 
     set text(font: tum-font, size: font-sizes.h1)
     v(2em)
