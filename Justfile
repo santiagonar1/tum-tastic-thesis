@@ -21,3 +21,9 @@ build: init
 
 thumbnail:
     typst compile thumbnail.typ thumbnail.png
+
+package target *options: build
+    ./scripts/package.sh "{{target}}" {{options}}
+
+install target="@local": build
+    ./scripts/package.sh "{{target}}"
