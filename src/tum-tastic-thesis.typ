@@ -8,7 +8,7 @@
 #import "tum-colors.typ": tum-colors
 
 #import "packages.typ": package
-#import package("algo"): algo, code, comment, d, i
+#import package("algo"): algo, d, i
 
 // ************************ FUNCTIONS *************************
 
