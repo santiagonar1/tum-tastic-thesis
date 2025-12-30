@@ -11,6 +11,13 @@
 
 // ************************ FUNCTIONS *************************
 
+#let listing(
+  code: raw("code"),
+  caption: [my caption],
+) = [
+  #figure(code, caption: caption)
+]
+
 #let algorithm(
   title: "My algorithm",
   parameters: (),

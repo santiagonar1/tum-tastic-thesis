@@ -2,6 +2,7 @@
 
 #import "../../src/tum-tastic-thesis.typ": chapter
 #import "../../src/tum-tastic-thesis.typ": flex-caption
+#import "../../src/tum-tastic-thesis.typ": listing
 #import "../../src/tum-tastic-thesis.typ": algorithm, d, i
 #import "@preview/abbr:0.3.0"
 
@@ -96,6 +97,23 @@
 
   == Code snippet
 
+  === With listing function
+
+  #listing(
+    code: ```typst
+    #show ref: it => {
+      if it.element == none {
+        text(fill: red)[(??)]
+      } else {
+        it
+      }
+    }
+    ```,
+    caption: [Code snippet using listing function],
+  )
+
+  === Passing raw to a figure
+
   #figure(
     ```typst
     #show ref: it => {
@@ -106,7 +124,7 @@
       }
     }
     ```,
-    caption: [Amazing code snippet],
+    caption: [Code snippet using figure function],
   )
 
   == An algorithm
