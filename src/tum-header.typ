@@ -4,7 +4,7 @@
 
 #let tum-logo-height = 10mm
 
-#let three-liner-headline-with-logo(author-info) = [
+#let three-liner-headline-with-logo(author-info, origin) = [
   #let three-liner-headline(author-info) = [
     #set text(fill: tum-colors.blue, size: 2.9mm)
     #author-info.group-name\
@@ -15,7 +15,8 @@
   #grid(
     columns: (1fr, auto),
     gutter: tum-logo-height,
-    [#three-liner-headline(author-info)], [#draw-tum-logo(tum-logo-height)],
+    [#three-liner-headline(author-info)],
+    [#draw-tum-logo(tum-logo-height, origin: origin)],
   )]
 
 #let two-liner-headline-with-logo(author-info, origin) = [

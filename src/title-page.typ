@@ -1,9 +1,13 @@
-#import "tum-header.typ": tum-logo-height, two-liner-headline-with-logo
+#import "tum-header.typ": (
+  three-liner-headline-with-logo, tum-logo-height, two-liner-headline-with-logo,
+)
 #import "page-conf.typ": title-page-margins, tum-page
 #import "tum-font.typ": font-sizes, tum-font
 #import "tum-colors.typ": tum-colors
 #import "university-names.typ": tum-name
-#import "committee-information.typ": check-committee-info
+#import "committee-information.typ": (
+  check-committee-info, check-committee-info-thesis,
+)
 #import "author-info.typ": check-author-info
 
 #let print-dissertation-title(
@@ -122,4 +126,111 @@
   ]
 ]
 
+#let print-thesis-title(
+  author-info: (
+    name: "Your Name Here",
+    group-name: "Your Group Or Chair Here",
+    school-name: "Your School Here",
+  ),
+  thesis-title: [Your Title Here],
+  subtitle: none,
+  degree-name: "Bachelor of Science",
+  committee-info: (
+    examiner: "Prof. Chair Here",
+    supervisor: "Supervisor goes here",
+  ),
+  date-submitted: datetime.today(),
+) = [
+  // -------------- Checks --------------
+  #check-author-info(author-info)
+  #check-committee-info-thesis(committee-info)
+
+  // --------------  Sets  --------------
+  #set text(font: tum-font)
+
+  #let margins = title-page-margins
+  #set page(
+    paper: tum-page.type,
+    margin: margins,
+  )
+
+  // -------------- Content --------------
+  #three-liner-headline-with-logo(author-info, top + left)
+
+  #let make_title = (my-title, subtitle: none) => [
+    #show title: set text(size: font-sizes.h1)
+    #show title: set align(left)
+    #v(tum-logo-height)
+    #title[#my-title]
+
+    #v(0.8em)
+    #if subtitle != none {
+      set text(size: font-sizes.h2)
+      subtitle
+    }
+    #v(6em)
+    #text(
+      size: font-sizes.h2,
+      fill: tum-colors.blue,
+      weight: "bold",
+    )[#author-info.name]
+  ]
+
+  #make_title(thesis-title, subtitle: subtitle)
+
+  #let content-height = tum-page.height - margins.top - margins.bottom
+  #let content-width = tum-page.width - margins.left - margins.right
+  #let half-page = 0.5 * content-height
+
+  #let fine-print-block = [
+    Thesis for the attainment of the academic degree
+    #v(1.2em)
+    *#degree-name*
+  ]
+
+  #let committee-block = [
+    *Examiner:*\
+    #committee-info.examiner
+    #v(0.6em)
+    *Supervisor:*\
+    #committee-info.supervisor
+    #v(0.6em)
+    *Submitted:*\
+    Munich, #date-submitted.display("[day].[month].[year]")
+  ]
+
+  #place(top + left, dx: 0pt, dy: content-height / 2)[
+    #set text(size: font-sizes.base)
+
+    #let first-box-height = half-page / 2 - tum-logo-height
+
+    #box(
+      height: first-box-height,
+      width: content-width,
+    )[
+      #fine-print-block
+    ]
+
+    #box(
+      height: half-page / 2,
+      width: content-width,
+    )[
+      #committee-block
+    ]
+  ]
+
+  #pagebreak()
+  #place(top + left, dx: 0pt, dy: 0.85 * content-height)[
+    I hereby declare that this thesis is entirely the result of my own work
+    except where otherwise indicated. I have only used the resources given in
+    the list of references
+    #v(5em)
+    Munich, #date-submitted.display("[day].[month].[year]")
+    #h(15em)
+    #author-info.name
+  ]
+]
+
+
 #print-dissertation-title()
+#print-thesis-title()
