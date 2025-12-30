@@ -1,9 +1,9 @@
 // ************* PASTE THIS ON EVERY STANDALONE DOCUMENT ***********************
 
-#import "../../src/tum-tastic-thesis.typ": chapter
-#import "../../src/tum-tastic-thesis.typ": flex-caption
-#import "../../src/tum-tastic-thesis.typ": listing
-#import "../../src/tum-tastic-thesis.typ": algorithm, d, i
+#import "@local/tum-tastic-thesis:0.1.0": chapter
+#import "@local/tum-tastic-thesis:0.1.0": flex-caption
+#import "@local/tum-tastic-thesis:0.1.0": listing
+#import "@local/tum-tastic-thesis:0.1.0": algorithm, d, i
 
 #import "../packages.typ": package
 

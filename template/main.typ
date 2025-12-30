@@ -1,4 +1,4 @@
-#import "../src/tum-tastic-thesis.typ": dissertation
+#import "@local/tum-tastic-thesis:0.1.0": dissertation
 
 #import "packages.typ": package
 
