@@ -169,6 +169,7 @@
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
   show-cover: true,
+  cover-image: none,
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
@@ -184,7 +185,12 @@
 
   // ----------- Preamble -----------
   if show-cover {
-    print-cover(author-info: author-info, title: title, subtitle: subtitle)
+    print-cover(
+      author-info: author-info,
+      title: title,
+      subtitle: subtitle,
+      cover-image: cover-image,
+    )
     print-empty-page()
   }
 

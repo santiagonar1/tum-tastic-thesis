@@ -12,6 +12,7 @@
   ),
   title: [Your Title Here],
   subtitle: none,
+  cover-image: none,
 ) = [
   // -------------- Checks --------------
   #check-author-info(author-info)
@@ -52,16 +53,20 @@
   #let content-width = tum-page.width - margins.left - margins.right
   #let half-page = 0.5 * content-height
 
-  #let tum-cover-image() = align(right)[
-    #image("assets/TUM_Tower.svg", width: 0.6 * content-width)
-  ]
+  #if cover-image != none {
+    let tum-cover-image = align(right)[
+      #set image(width: 0.6 * content-width, height: 0.5 * content-height)
+      #cover-image
+    ]
 
-  #place(top + left, dx: 0pt, dy: content-height / 2, box(
-    height: half-page,
-    width: content-width,
-  )[
-    #place(bottom + right, tum-cover-image())
-  ])
+    place(top + left, dx: 0pt, dy: content-height / 2, box(
+      height: half-page,
+      width: content-width,
+    )[
+      #place(bottom + right, tum-cover-image)
+    ])
+  }
+
 ]
 
 #let my-info = (
@@ -80,4 +85,3 @@
 )
 
 #print-cover(author-info: my-info, title: dissertation-title)
-#print-cover()
