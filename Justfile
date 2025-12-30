@@ -4,13 +4,17 @@ export TYPST_ROOT := root
 
 [private]
 default:
-	@just --list --unsorted
+    @just --list --unsorted
 
 [private]
 init:
     @mkdir -p build
 
-test: init
-    typst compile template/main.typ build/main.pdf
+test *filter:
+    tt run {{filter}} --use-system-fonts
 
-build: test
+update-test *filter:
+    tt update {{filter}} --use-system-fonts
+
+build: init
+    typst compile template/main.typ build/main.pdf
