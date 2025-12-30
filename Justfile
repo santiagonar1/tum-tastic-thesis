@@ -18,3 +18,6 @@ update-test *filter:
 
 build: init
     typst compile template/main.typ build/main.pdf
+
+thumbnail:
+    typst compile thumbnail.typ thumbnail.png
