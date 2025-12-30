@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python3
 import glob, os, sys, re
 
 import_regexp = re.compile(f'#(import|include)\\s*"(/.+)"')
