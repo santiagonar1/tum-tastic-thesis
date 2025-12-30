@@ -3,8 +3,7 @@
 #import "tum-font.typ": font-sizes, tum-font
 #import "tum-colors.typ": tum-colors
 
-#import "packages.typ": package
-#import package("algo"): algo, d, i
+#import "@preview/algo:0.3.6": algo, d, i
 
 // ************************ FUNCTIONS *************************
 
