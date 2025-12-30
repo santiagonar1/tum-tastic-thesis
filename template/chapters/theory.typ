@@ -25,6 +25,7 @@
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
+  show-algorithm-index: true,
 )
 
 // ************************ PASTE UNTIL HERE *********************************

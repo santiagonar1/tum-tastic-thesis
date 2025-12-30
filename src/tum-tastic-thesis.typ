@@ -50,6 +50,7 @@
   show-figures-index: false,
   show-table-index: false,
   show-listing-index: false,
+  show-algorithm-index: false,
   doc,
 ) = {
   // ----------- Sets -----------
@@ -175,6 +176,11 @@
     pagebreak()
     print-listing-index()
   }
+
+  if show-algorithm-index {
+    pagebreak()
+    print-algorithm-index()
+  }
 }
 
 #let dissertation(
@@ -200,6 +206,7 @@
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
+  show-algorithm-index: true,
   doc,
 ) = {
   let print-empty-page() = [
@@ -266,5 +273,10 @@
   if show-listing-index {
     pagebreak()
     print-listing-index()
+  }
+
+  if show-algorithm-index {
+    pagebreak()
+    print-algorithm-index()
   }
 }
