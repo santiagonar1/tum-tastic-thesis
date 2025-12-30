@@ -294,3 +294,106 @@
     print-algorithm-index()
   }
 }
+
+#let thesis(
+  author-info: (
+    name: "Your Name Here",
+    group-name: "Your Group Or Chair Here",
+    school-name: "Your School Here",
+  ),
+  title: [Your Title Here],
+  subtitle: none,
+  degree-name: "Bachelor in Science",
+  committee-info: (
+    examiner: "Prof. Chair Here",
+    supervisor: "Supervisor goes here",
+  ),
+  date-submitted: datetime.today(),
+  acknowledgements: [#lorem(100)],
+  abstract: [#lorem(100)],
+  show-cover: true,
+  cover-image: none,
+  show-figures-index: true,
+  show-table-index: true,
+  show-listing-index: true,
+  show-algorithm-index: true,
+  doc,
+) = {
+  let print-empty-page() = [
+    #pagebreak()
+    #pagebreak()
+  ]
+
+  // ------ Local Imports -------
+  import "abstract-page.typ": print-abstract
+  import "acknowledgements-page.typ": print-acknowledgements
+  import "content-page.typ": *
+  import "cover-page.typ": print-cover
+  import "title-page.typ": print-thesis-title
+
+  // ----------- Sets -----------
+  set document(title: title, author: author-info.name, date: datetime.today())
+
+  // ----------- Preamble -----------
+  if show-cover {
+    print-cover(
+      author-info: author-info,
+      title: title,
+      subtitle: subtitle,
+      cover-image: cover-image,
+    )
+    print-empty-page()
+  }
+
+  print-thesis-title(
+    author-info: author-info,
+    thesis-title: title,
+    subtitle: subtitle,
+    degree-name: degree-name,
+    committee-info: committee-info,
+    date-submitted: date-submitted,
+  )
+  print-empty-page()
+
+  set page(numbering: "i")
+
+  if acknowledgements != none {
+    print-acknowledgements(acknowledgements)
+    print-empty-page()
+  }
+
+  if abstract != none {
+    print-abstract(abstract)
+    pagebreak()
+  }
+
+  print-index()
+  pagebreak()
+
+  // ----------- Content -----------
+  show: chapter.with()
+
+  doc
+
+  // --------- After Content -------
+  if show-figures-index {
+    pagebreak()
+    print-figure-index()
+  }
+
+  if show-table-index {
+    pagebreak()
+    print-table-index()
+  }
+
+  if show-listing-index {
+    pagebreak()
+    print-listing-index()
+  }
+
+  if show-algorithm-index {
+    pagebreak()
+    print-algorithm-index()
+  }
+}
+

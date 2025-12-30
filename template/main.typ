@@ -1,4 +1,4 @@
-#import "@local/tum-tastic-thesis:0.1.0": dissertation
+#import "@local/tum-tastic-thesis:0.1.0": dissertation, thesis
 
 #import "packages.typ": package
 
@@ -13,6 +13,9 @@
 
 // We configure the template
 #show: dissertation.with()
+
+// If you are doing a bachelor/master thesis, use instead:
+// #show: thesis.with()
 
 // Your chapters go here
 #introduction.content
