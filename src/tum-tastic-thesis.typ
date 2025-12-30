@@ -1,10 +1,6 @@
-#import "cover-page.typ": print-cover
-#import "title-page.typ": print-dissertation-title
-#import "abstract-page.typ": print-abstract
-#import "acknowledgements-page.typ": print-acknowledgements
+// ************** IMPORTS HERE VISIBLE TO USER ****************
+
 #import "tum-font.typ": font-sizes, tum-font
-#import "page-conf.typ": first-line-indent
-#import "content-page.typ": *
 #import "tum-colors.typ": tum-colors
 
 #import "packages.typ": package
@@ -61,6 +57,10 @@
   show-algorithm-index: false,
   doc,
 ) = {
+  // ------ Local Imports -------
+  import "page-conf.typ": first-line-indent
+  import "content-page.typ": *
+
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
@@ -221,6 +221,13 @@
     #pagebreak()
     #pagebreak()
   ]
+
+  // ------ Local Imports -------
+  import "abstract-page.typ": print-abstract
+  import "acknowledgements-page.typ": print-acknowledgements
+  import "content-page.typ": *
+  import "cover-page.typ": print-cover
+  import "title-page.typ": print-dissertation-title
 
   // ----------- Sets -----------
   set document(title: title, author: author-info.name, date: datetime.today())
