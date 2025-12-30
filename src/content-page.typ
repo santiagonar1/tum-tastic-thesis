@@ -1,4 +1,4 @@
-#import "tum-font.typ": font-sizes, tum-font
+#import "tum-font.typ": font-sizes
 #import "utils.typ": format-title-section-before-chapters
 
 #let print-index() = [
@@ -7,12 +7,11 @@
     it.element.location(),
     it.indented(it.prefix(), text(
       weight: "bold",
-      font: tum-font,
       size: font-sizes.base,
     )[#it.inner()]),
   )
 
-  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+  #show outline.entry: set text( size: font-sizes.base)
 
 
   // We need to reset the show rule in case this is called from a document
@@ -20,7 +19,7 @@
   #show heading.where(level: 1): it => it.body
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
@@ -32,7 +31,7 @@
 
 #let print-figure-index() = [
   // --------------  Sets  --------------
-  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+  #show outline.entry: set text(size: font-sizes.base)
 
   // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
   #let in-outline = state("in-outline", false)
@@ -50,7 +49,7 @@
   #show heading.where(level: 1): it => it.body
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text( size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
@@ -62,7 +61,7 @@
 
 #let print-table-index() = [
   // --------------  Sets  --------------
-  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+  #show outline.entry: set text(size: font-sizes.base)
 
   // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
   #let in-outline = state("in-outline", false)
@@ -80,7 +79,7 @@
   #show heading.where(level: 1): it => it.body
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
@@ -92,7 +91,7 @@
 
 #let print-listing-index() = [
   // --------------  Sets  --------------
-  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+  #show outline.entry: set text(size: font-sizes.base)
 
   // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
   #let in-outline = state("in-outline", false)
@@ -110,7 +109,7 @@
   #show heading.where(level: 1): it => it.body
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
@@ -122,7 +121,7 @@
 
 #let print-algorithm-index() = [
   // --------------  Sets  --------------
-  #show outline.entry: set text(font: tum-font, size: font-sizes.base)
+  #show outline.entry: set text(size: font-sizes.base)
 
   // See: https://github.com/typst/typst/issues/1295#issuecomment-2749005636
   #let in-outline = state("in-outline", false)
@@ -140,7 +139,7 @@
   #show heading.where(level: 1): it => it.body
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)

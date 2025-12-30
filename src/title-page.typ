@@ -2,7 +2,7 @@
   three-liner-headline-with-logo, tum-logo-height, two-liner-headline-with-logo,
 )
 #import "page-conf.typ": title-page-margins, tum-page
-#import "tum-font.typ": font-sizes, tum-font
+#import "tum-font.typ": font-sizes
 #import "tum-colors.typ": tum-colors
 #import "university-names.typ": tum-name
 #import "committee-information.typ": (
@@ -43,8 +43,6 @@
   ]
 
   // --------------  Sets  --------------
-  #set text(font: tum-font)
-
   #let margins = title-page-margins
   #set page(
     paper: tum-page.type,
@@ -146,8 +144,6 @@
   #check-committee-info-thesis(committee-info)
 
   // --------------  Sets  --------------
-  #set text(font: tum-font)
-
   #let margins = title-page-margins
   #set page(
     paper: tum-page.type,

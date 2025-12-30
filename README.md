@@ -42,10 +42,10 @@ It also comes with three helper functions:
 1. `flex-caption`, useful to distinguish between shorter and longer captions, to show in the outline or below the element, respectively. It is based on [this code snippet](https://github.com/typst/typst/issues/1295#issuecomment-2749005636).
 1. `listing`, to avoid having to wrap a raw text in a figure.
 1. `algorithm`, that creates an abstraction on top of the [algo](https://typst.app/universe/package/algo/). It maintains consistency in style and handles the caption (e.g., it uses `Algorithm` as a supplement in the caption).
+
 We also expose:
 
 1. `font-sizes`, a dictionary with the font size for base and h[1-4].
-1. `tum-font`, with the default font used in the document.
 1. `tum-colors`, a dictionary with different colors taken from the TUM corporate design.
 
 ### Dissertation

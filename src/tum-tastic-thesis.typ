@@ -1,6 +1,6 @@
 // ************** IMPORTS HERE VISIBLE TO USER ****************
 
-#import "tum-font.typ": font-sizes, tum-font
+#import "tum-font.typ": font-sizes
 #import "tum-colors.typ": tum-colors
 
 #import "@preview/algo:0.3.6": algo, d, i
@@ -117,7 +117,7 @@
 
   set figure(gap: 1em)
 
-  set text(font: tum-font, size: font-sizes.base)
+  set text(size: font-sizes.base)
 
   set par(justify: true, first-line-indent: first-line-indent)
 
@@ -131,27 +131,27 @@
     counter(figure.where(kind: raw)).update(0)
     counter(figure.where(kind: "algorithm")).update(0)
 
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
   }
 
   show heading.where(level: 2): it => {
-    set text(font: tum-font, size: font-sizes.h2)
+    set text(size: font-sizes.h2)
     v(0.2em)
     strong(it)
     v(0.6em)
   }
 
   show heading.where(level: 3): it => {
-    set text(font: tum-font, size: font-sizes.h3)
+    set text(size: font-sizes.h3)
     strong(it)
     v(0.3em)
   }
 
   show heading.where(level: 4): it => {
-    set text(font: tum-font, size: font-sizes.h4)
+    set text(size: font-sizes.h4)
     strong(it)
   }
 

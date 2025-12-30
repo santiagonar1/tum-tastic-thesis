@@ -1,6 +1,6 @@
 #import "author-info.typ": check-author-info
 #import "tum-colors.typ": tum-colors
-#import "tum-font.typ": font-sizes, tum-font
+#import "tum-font.typ": font-sizes
 #import "page-conf.typ": cover-page-margins, tum-page
 #import "tum-header.typ": three-liner-headline-with-logo, tum-logo-height
 
@@ -18,8 +18,6 @@
   #check-author-info(author-info)
 
   // --------------  Sets  --------------
-  #set text(font: tum-font)
-
   #let margins = cover-page-margins
   #set page(
     paper: tum-page.type,
