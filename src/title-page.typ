@@ -122,17 +122,4 @@
   ]
 ]
 
-
-#let author-info = (
-  name: "Santiago Narváez Rivas",
-  group-name: "Chair of Scientific Computing",
-  school-name: "TUM School of Computation, Information and Technology",
-)
-
-#let committee-info = (
-  chair: "Prof. Chair Goes Here",
-  first-evaluator: "Prof. First Evaluator Here",
-  second-evaluator: "Prof. Second Evaluator Here",
-)
-
 #print-dissertation-title()
