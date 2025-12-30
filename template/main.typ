@@ -1,6 +1,8 @@
 #import "../src/tum-tastic-thesis.typ": dissertation
 
-#import "@preview/abbr:0.3.0"
+#import "packages.typ": package
+
+#import package("abbr") as abbr
 
 #show: abbr.show-rule
 #abbr.load("abbreviations.csv")

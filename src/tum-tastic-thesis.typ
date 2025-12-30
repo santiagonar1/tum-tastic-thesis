@@ -7,7 +7,8 @@
 #import "content-page.typ": *
 #import "tum-colors.typ": tum-colors
 
-#import "@preview/algo:0.3.6": algo, code, comment, d, i
+#import "packages.typ": package
+#import package("algo"): algo, code, comment, d, i
 
 // ************************ FUNCTIONS *************************
 

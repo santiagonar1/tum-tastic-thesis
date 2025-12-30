@@ -4,7 +4,10 @@
 #import "../../src/tum-tastic-thesis.typ": flex-caption
 #import "../../src/tum-tastic-thesis.typ": listing
 #import "../../src/tum-tastic-thesis.typ": algorithm, d, i
-#import "@preview/abbr:0.3.0"
+
+#import "../packages.typ": package
+
+#import package("abbr") as abbr
 
 // Handle undefined references when compiling a chapter as a standalone
 // document. See:
