@@ -135,31 +135,4 @@
   second-evaluator: "Prof. Second Evaluator Here",
 )
 
-#let dissertation-title = [Evaluation of Elastic Applications in HPC]
-#let subtitle = [Subtitle of the thesis]
-#let degree-name = "Doktors der Naturwissenschaften (Dr. rer. nat.)"
-
-#let date-submitted = datetime(
-  year: 2020,
-  month: 10,
-  day: 4,
-)
-
-#let date-accepted = datetime(
-  year: 2023,
-  month: 11,
-  day: 4,
-)
-
-#print-dissertation-title(
-  author-info: author-info,
-  dissertation-title: dissertation-title,
-  degree-name: degree-name,
-  committee-info: committee-info,
-  date-submitted: date-submitted,
-  date-accepted: date-accepted,
-  subtitle: subtitle,
-)
-
 #print-dissertation-title()
-

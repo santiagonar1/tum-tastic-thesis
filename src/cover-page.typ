@@ -69,19 +69,5 @@
 
 ]
 
-#let my-info = (
-  name: "Santiago Narváez Rivas",
-  group-name: "Chair of Scientific Computing",
-  school-name: "TUM School of Computation, Information and Technology",
-)
-
-#let dissertation-title = [Evaluation of Elastic Applications in HPC]
-#let dissertation-subtitle = [Subtitle of the thesis]
-
-#print-cover(
-  author-info: my-info,
-  title: dissertation-title,
-  subtitle: dissertation-subtitle,
-)
-
-#print-cover(author-info: my-info, title: dissertation-title)
+#print-cover()
+#print-cover(subtitle: [Subtitle goes here]))
