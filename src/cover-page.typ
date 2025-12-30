@@ -23,7 +23,7 @@
   #let margins = cover-page-margins
   #set page(
     paper: tum-page.type,
-    header: three-liner-headline-with-logo(author-info),
+    header: three-liner-headline-with-logo(author-info, bottom + left),
     margin: margins,
   )
 
