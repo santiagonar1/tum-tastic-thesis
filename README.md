@@ -55,7 +55,9 @@ can see, there are multiple points of customization, especially on what elements
 should be printed or not (e.g., the cover, different outlines).
 
 ```typst
-#let dissertation(
+#import "@preview/tum-tastic-thesis:0.1.0": dissertation
+
+#show: dissertation.with(
   author-info: (
     name: "Your Name Here",
     group-name: "Your Group Or Chair Here",
@@ -97,7 +99,9 @@ similar to the `dissertation` one, but with fewer fields. The title page of
 a thesis and a dissertation also differs, but *TUM-tastic* takes care of that.
 
 ```typst
-#let thesis(
+#import "@preview/tum-tastic-thesis:0.1.0": thesis
+
+#show: thesis.with(
   author-info: (
     name: "Your Name Here",
     group-name: "Your Group Or Chair Here",
@@ -135,7 +139,9 @@ especially for long documents. That is why we include the `chapter` template,
 with the default values shown below.
 
 ```typst
-#let chapter(
+#import "@preview/tum-tastic-thesis:0.1.0": chapter
+
+#show: chapter.with(
   show-index: false,
   show-figures-index: false,
   show-table-index: false,
