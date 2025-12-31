@@ -28,15 +28,24 @@ jobs:
         id: setup-typst
         uses: typst-community/setup-typst@v4
 
+      - name: Check version typst
+        run: typst --version
+
       - name: Install just
         uses: taiki-e/install-action@v2
         with:
           tool: just
 
+      - name: Check version just
+        run: just --version
+
       - name: Install tytanic
         uses: taiki-e/install-action@v2
         with:
           tool: tytanic
+
+      - name: Check version tytanic
+        run: tt --version
 
       - name: Check out repository code
         uses: actions/checkout@v6
