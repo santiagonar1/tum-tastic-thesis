@@ -1,4 +1,5 @@
-#import "@preview/cetz:0.4.2"
+#import "packages.typ": package
+#import package("cetz") as cetz
 
 #import "tum-colors.typ": tum-colors
 

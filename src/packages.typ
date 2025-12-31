@@ -1,7 +1,7 @@
 #let package(name) = {
   let packages = (
-    abbr: "0.3.0",
-    tum-tastic-thesis: "0.1.0",
+    algo: "0.3.6",
+    cetz: "0.4.2",
   )
 
   let version = packages.at(name)

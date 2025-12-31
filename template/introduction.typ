@@ -1,13 +1,11 @@
 // ************* PASTE THIS ON EVERY STANDALONE DOCUMENT ***********************
 
-#import "@preview/tum-tastic-thesis:0.1.0": chapter
-#import "@preview/tum-tastic-thesis:0.1.0": flex-caption
-#import "@preview/tum-tastic-thesis:0.1.0": listing
-#import "@preview/tum-tastic-thesis:0.1.0": algorithm, d, i
-
 #import "packages.typ": package
 
 #import package("abbr") as abbr
+#import package("tum-tastic-thesis"): (
+  algorithm, chapter, d, flex-caption, i, listing,
+)
 
 // Handle undefined references when compiling a chapter as a standalone
 // document. See:
