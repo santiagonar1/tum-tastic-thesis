@@ -270,7 +270,6 @@ in case you want more control on the styling:
 #figure(code(my-code, fill: luma(240)), caption: [my caption], kind: raw)
 ```
 
-
 ### Using `algorithm`
 
 We have a wrapper on top of the [algo](https://typst.app/universe/package/algo/)
