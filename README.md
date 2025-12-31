@@ -196,6 +196,14 @@ Now, there are some caveats:
 1. Sadly, we could not find a way to make the bibliography work when compiling a chapter as a standalone document. Instead of the reference, you will observe `??`. This does not affect the compilation of the whole document (i.e., our `main.typ`), where the references work as expected.
 1. Related to the previous point, we need to insert a function to handle undefined references at the beginning of each chapter. If you compile the introduction and there you have a reference to a label of a different chapter, you will get `??` on standalone mode.
 
+If you decide to store your chapters in a separate folder (e.g., `chapters`),
+then the easiest thing to compile each one of them via the CLI is to execute
+from the root folder (i.e., where your `main.typ` is located) the following:
+
+```sh
+typst compile chapters/introduction.typ --root .
+```
+
 ### Using `flex-caption`
 
 You can use `flex-caption` with anything that takes a caption, such a figure,

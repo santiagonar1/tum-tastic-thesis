@@ -8,8 +8,8 @@
 #abbr.load("abbreviations.csv")
 
 // Import each chapter here
-#import "chapters/theory.typ" as theory
-#import "chapters/introduction.typ" as introduction
+#import "theory.typ" as theory
+#import "introduction.typ" as introduction
 
 // We configure the template
 #show: dissertation.with()

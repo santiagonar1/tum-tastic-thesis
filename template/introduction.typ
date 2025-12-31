@@ -5,7 +5,7 @@
 #import "@local/tum-tastic-thesis:0.1.0": listing
 #import "@local/tum-tastic-thesis:0.1.0": algorithm, d, i
 
-#import "../packages.typ": package
+#import "packages.typ": package
 
 #import package("abbr") as abbr
 
@@ -22,7 +22,7 @@
 }
 
 #show: abbr.show-rule
-#abbr.load("../abbreviations.csv")
+#abbr.load("abbreviations.csv")
 
 #show: chapter.with(
   show-index: true,
@@ -43,24 +43,25 @@
 }
 
 #let content = [
-  = Theory <ch:theory>
-  Check references style: @ch:theory, @theory:sec:first and @theory:sec:second.
-  Also @theory:subsec:first and @theory:subsec:second. Bibliography does not
-  work when compiling a standalone chapter: @knuth1990literate
-  @lamport1994latex. We can also have smart abbreviations, like @PDE and @PDE.
+  = Introduction <ch:introduction>
+  Check references style: @ch:introduction, @intro:sec:first and
+  @intro:sec:second. Also @intro:subsec:first and @intro:subsec:second.
+  Bibliography does not work when compiling a standalone chapter:
+  @knuth1990literate @lamport1994latex. We can also have smart abbreviations,
+  like @PDE and @PDE.
 
   #insert-par(3)
 
-  == First subsection theory <theory:sec:first>
+  == First subsection introduction <intro:sec:first>
   #insert-par(4)
 
-  === A subsubsection <theory:subsec:first>
+  === A subsubsection <intro:subsec:first>
   #insert-par(4)
 
-  === Another subsubsection <theory:subsec:second>
+  === Another subsubsection <intro:subsec:second>
   #insert-par(2)
 
-  == A figure <theory:sec:second>
+  == A figure <intro:sec:second>
 
   === With normal caption
   #figure(
