@@ -11,6 +11,7 @@ init:
     @mkdir -p build
 
 test *filter:
+    just install @preview
     tt run {{filter}}
 
 update-test *filter:
