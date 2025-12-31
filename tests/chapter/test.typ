@@ -2,6 +2,8 @@
   algorithm, chapter, d, flex-caption, i, listing,
 )
 
+#import "@preview/algo:0.3.6" as algo
+
 #show: chapter.with()
 
 
@@ -60,7 +62,7 @@ Our flex-caption is based on #link(
 === With listing function
 
 #listing(
-  code: ```typst
+  my-code: ```typst
   #show ref: it => {
     if it.element == none {
       text(fill: red)[(??)]

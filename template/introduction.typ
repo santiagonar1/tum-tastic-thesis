@@ -99,10 +99,8 @@
 
   == Code snippet
 
-  === With listing function
-
   #listing(
-    code: ```typst
+    my-code: ```typst
     #show ref: it => {
       if it.element == none {
         text(fill: red)[(??)]
@@ -112,21 +110,6 @@
     }
     ```,
     caption: [Code snippet using listing function],
-  )
-
-  === Passing raw to a figure
-
-  #figure(
-    ```typst
-    #show ref: it => {
-      if it.element == none {
-        text(fill: red)[(??)]
-      } else {
-        it
-      }
-    }
-    ```,
-    caption: [Code snippet using figure function],
   )
 
   == An algorithm

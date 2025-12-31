@@ -9,13 +9,15 @@
 #import "title-page.typ": print-dissertation-title, print-thesis-title
 
 #import "packages.typ": package
-#import package("algo"): algo, d, i
+#import package("algo"): algo, code, d, i
 
 #let listing(
-  code: raw("code"),
+  my-code: raw("code"),
   caption: [my caption],
+  fill: luma(240),
 ) = [
-  #figure(code, caption: caption)
+  #figure(code(my-code, fill: fill), caption: caption, kind: raw)
+
 ]
 
 #let algorithm(
@@ -73,12 +75,6 @@
     } else {
       it.body
     }
-  }
-
-  // Format raw text, used for code blocks
-  show raw.where(block: true): it => {
-    set block(inset: 5pt, fill: luma(240))
-    pad(0.5em, it)
   }
 
   // Format equation counting as (chapter.#eq)

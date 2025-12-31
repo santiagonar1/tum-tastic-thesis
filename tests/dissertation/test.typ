@@ -57,10 +57,8 @@ Our flex-caption is based on #link(
 
 == Code snippet
 
-=== With listing function
-
 #listing(
-  code: ```typst
+  my-code: ```typst
   #show ref: it => {
     if it.element == none {
       text(fill: red)[(??)]
@@ -70,21 +68,6 @@ Our flex-caption is based on #link(
   }
   ```,
   caption: [Code snippet using listing function],
-)
-
-=== Passing raw to a figure
-
-#figure(
-  ```typst
-  #show ref: it => {
-    if it.element == none {
-      text(fill: red)[(??)]
-    } else {
-      it
-    }
-  }
-  ```,
-  caption: [Code snippet using figure function],
 )
 
 == An algorithm
@@ -158,7 +141,7 @@ Our flex-caption is based on #link(
 === With listing function
 
 #listing(
-  code: ```typst
+  my-code: ```typst
   #show ref: it => {
     if it.element == none {
       text(fill: red)[(??)]
