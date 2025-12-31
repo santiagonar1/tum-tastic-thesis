@@ -10,6 +10,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -24,6 +25,7 @@
     cover-image: rect(fill: blue),
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -37,6 +39,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: [Here is my custom abstract],
   )
@@ -50,6 +53,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: [Here are my custom acknowledgements],
     abstract: none,
   )
@@ -63,6 +67,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -77,6 +82,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -91,6 +97,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -105,6 +112,7 @@
     show-cover: false,
     show-table-index: true,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -119,6 +127,7 @@
     show-cover: false,
     show-table-index: false,
     show-listing-index: true,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -134,6 +143,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -148,6 +158,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -166,6 +177,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -183,6 +195,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -201,6 +214,7 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
@@ -215,9 +229,32 @@
     show-cover: true,
     show-table-index: false,
     show-listing-index: false,
+    show-chapter-header: false,
     acknowledgements: none,
     abstract: none,
   )
+]
+
+#let show-chapter-header = [
+  #show: thesis.with(
+    degree-name: "My Custom Degree",
+    show-index: false,
+    show-algorithm-index: false,
+    show-figures-index: false,
+    show-cover: true,
+    show-table-index: false,
+    show-listing-index: false,
+    show-chapter-header: true,
+    acknowledgements: none,
+    abstract: none,
+  )
+  = One
+  #pagebreak()
+  == Inside one
+  #pagebreak()
+  = Two
+  #pagebreak()
+  == Inside two
 ]
 
 #show-cover
@@ -234,3 +271,4 @@
 #show-custom-author-info
 #show-custom-chair-info
 #show-custom-dates
+#show-chapter-header
