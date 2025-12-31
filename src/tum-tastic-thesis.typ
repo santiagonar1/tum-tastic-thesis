@@ -215,6 +215,7 @@
   abstract: [#lorem(100)],
   show-cover: true,
   cover-image: none,
+  show-index: true,
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
@@ -263,8 +264,10 @@
     pagebreak()
   }
 
-  print-index()
-  pagebreak()
+  if show-index {
+    print-index()
+    pagebreak()
+  }
 
   // ----------- Content -----------
   show: chapter.with()
@@ -315,6 +318,7 @@
   abstract: [#lorem(100)],
   show-cover: true,
   cover-image: none,
+  show-index: true,
   show-figures-index: true,
   show-table-index: true,
   show-listing-index: true,
@@ -362,8 +366,10 @@
     pagebreak()
   }
 
-  print-index()
-  pagebreak()
+    if show-index {
+    print-index()
+    pagebreak()
+  }
 
   // ----------- Content -----------
   show: chapter.with()
