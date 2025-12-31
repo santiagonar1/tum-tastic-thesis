@@ -69,35 +69,32 @@
   counter(page).update(1)
   set page(numbering: "1")
 
-  // Format heading
-  if show-chapter-header {
-    set page(
-      header: context {
-        set text(style: "italic")
-        // 1. Find all headings that appear before the current location
-        let selector-before = selector(heading.where(level: 1)).before(here())
-        let headings-before = query(selector-before)
+  set page(
+    header: context {
+      set text(style: "italic")
+      // 1. Find all headings that appear before the current location
+      let selector-before = selector(heading.where(level: 1)).before(here())
+      let headings-before = query(selector-before)
 
-        // 2. If there are no headings before the current point, return nothing
-        if headings-before.len() == 0 {
-          return
-        }
+      // 2. If there are no headings before the current point, return nothing
+      if headings-before.len() == 0 {
+        return
+      }
 
-        // 3. Get the most recent heading element
-        let name = headings-before.last().body
+      // 3. Get the most recent heading element
+      let name = headings-before.last().body
 
-        let current-page = here().page()
-        let has-heading = query(heading.where(level: 1)).any(it => (
-          it.location().page() == current-page
-        ))
+      let current-page = here().page()
+      let has-heading = query(heading.where(level: 1)).any(it => (
+        it.location().page() == current-page
+      ))
 
-        if not has-heading {
-          let chapter-num = counter(heading.where(level: 1)).get().first()
-          align(right)[#chapter-num. #name]
-        }
-      },
-    )
-  }
+      if not has-heading {
+        let chapter-num = counter(heading.where(level: 1)).get().first()
+        align(right)[#chapter-num. #name]
+      }
+    },
+  ) if show-chapter-header
 
   // Format link
   show link: it => {

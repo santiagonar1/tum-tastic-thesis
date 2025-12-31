@@ -2,7 +2,7 @@
   algorithm, d, flex-caption, i, listing, thesis,
 )
 
-#show: thesis.with(show-chapter-header: false)
+#show: thesis.with()
 
 
 // Your chapters go here
