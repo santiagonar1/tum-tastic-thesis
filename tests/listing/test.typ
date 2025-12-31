@@ -17,6 +17,6 @@
 
 #listing(
   my-code: my-code,
-  fill: luma(61.15%), // Default value
+  fill: luma(61.15%),
   caption: [Other with different fill],
 )
