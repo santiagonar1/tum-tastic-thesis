@@ -1,11 +1,14 @@
-// ************** IMPORTS HERE VISIBLE TO USER ****************
-
 #import "tum-font.typ": font-sizes
 #import "tum-colors.typ": tum-colors
+#import "page-conf.typ": first-line-indent
+#import "content-page.typ": *
+#import "abstract-page.typ": print-abstract
+#import "acknowledgements-page.typ": print-acknowledgements
+#import "content-page.typ": *
+#import "cover-page.typ": print-cover
+#import "title-page.typ": print-dissertation-title, print-thesis-title
 
 #import "@preview/algo:0.3.6": algo, d, i
-
-// ************************ FUNCTIONS *************************
 
 #let listing(
   code: raw("code"),
@@ -56,10 +59,6 @@
   show-algorithm-index: false,
   doc,
 ) = {
-  // ------ Local Imports -------
-  import "page-conf.typ": first-line-indent
-  import "content-page.typ": *
-
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
@@ -229,13 +228,6 @@
     #pagebreak()
   ]
 
-  // ------ Local Imports -------
-  import "abstract-page.typ": print-abstract
-  import "acknowledgements-page.typ": print-acknowledgements
-  import "content-page.typ": *
-  import "cover-page.typ": print-cover
-  import "title-page.typ": print-dissertation-title
-
   // ----------- Sets -----------
   set document(title: title, author: author-info.name, date: datetime.today())
 
@@ -335,13 +327,6 @@
     #pagebreak()
     #pagebreak()
   ]
-
-  // ------ Local Imports -------
-  import "abstract-page.typ": print-abstract
-  import "acknowledgements-page.typ": print-acknowledgements
-  import "content-page.typ": *
-  import "cover-page.typ": print-cover
-  import "title-page.typ": print-thesis-title
 
   // ----------- Sets -----------
   set document(title: title, author: author-info.name, date: datetime.today())
