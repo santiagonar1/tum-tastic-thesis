@@ -1,11 +1,11 @@
 // ************* PASTE THIS ON EVERY STANDALONE DOCUMENT ***********************
 
-#import "@local/tum-tastic-thesis:0.1.0": chapter
-#import "@local/tum-tastic-thesis:0.1.0": flex-caption
-#import "@local/tum-tastic-thesis:0.1.0": listing
-#import "@local/tum-tastic-thesis:0.1.0": algorithm, d, i
+#import "@preview/tum-tastic-thesis:0.1.0": chapter
+#import "@preview/tum-tastic-thesis:0.1.0": flex-caption
+#import "@preview/tum-tastic-thesis:0.1.0": listing
+#import "@preview/tum-tastic-thesis:0.1.0": algorithm, d, i
 
-#import "../packages.typ": package
+#import "packages.typ": package
 
 #import package("abbr") as abbr
 
@@ -22,7 +22,7 @@
 }
 
 #show: abbr.show-rule
-#abbr.load("../abbreviations.csv")
+#abbr.load("abbreviations.csv")
 
 #show: chapter.with(
   show-index: true,
