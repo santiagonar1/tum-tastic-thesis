@@ -8,7 +8,7 @@ authors = ["Santiago Narváez Rivas <https://github.com/santiagonar1>"]
 categories = ["thesis"]
 disciplines = ["computer-science"]
 license = "MIT"
-description = "An unofficial template for TUM thesis and dissertations"
+description = "An unofficial template for TUM theses and dissertations"
 keywords = ["thesis", "dissertation", "tum"]
 exclude = []
 
