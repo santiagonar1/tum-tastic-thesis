@@ -299,6 +299,39 @@ all the [algo](https://typst.app/universe/package/algo/) package, but simply
   )
 ```
 
+As with `listing`, you can also recreate this by passing an `algo` to a `figure`.
+This has the advantage that you can have additional styling options. Make sure
+to mark `kind: "algorithm"` for the `figure` , and add as supplement
+`[Algorithm]`, so that the template includes it in the Algorithm section and
+puts the correct caption:
+
+```typst
+#import "@preview/algo:0.3.6": algo, i, d
+
+#let my-content = [
+  if $n < 0$:#i\ // use #i to indent the following lines
+  return null#d\ // use #d to dedent the following lines
+  if $n = 0$ or $n = 1$:#i \
+  return $n$#d \
+  return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+]
+
+// Here you can use all the styling offered by the algo function in the
+// algo package. Mark the kind of figure as "algorithm", and add as supplement
+// `[Algorithm]`
+#figure(
+  algo(
+    title: "Fib",
+    parameters: ("n",),
+    fill: rgb("#e4c554"),
+    my-content,
+  ),
+  caption: [my caption],
+  kind: "algorithm",
+  supplement: [Algorithm],
+)
+```
+
 ## Contributing
 
 All the help is welcomed! If you choose to do so, simply go to my

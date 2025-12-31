@@ -72,6 +72,8 @@ Our flex-caption is based on #link(
 
 == An algorithm
 
+=== With algorithm function
+
 #algorithm(
   title: "Fib",
   parameters: ("n",),
@@ -83,6 +85,30 @@ Our flex-caption is based on #link(
     return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
   ],
   caption: [My algorithm],
+)
+
+=== Passing alg to a figure
+
+#import "@preview/algo:0.3.6": algo, d, i
+
+#let my-content = [
+  if $n < 0$:#i\ // use #i to indent the following lines
+  return null#d\ // use #d to dedent the following lines
+  if $n = 0$ or $n = 1$:#i \
+  return $n$#d \
+  return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+]
+
+#figure(
+  algo(
+    title: "Fib",
+    parameters: ("n",),
+    fill: rgb("#e4c554"),
+    my-content,
+  ),
+  caption: [my caption],
+  kind: "algorithm",
+  supplement: [Algorithm],
 )
 
 
@@ -170,6 +196,8 @@ Our flex-caption is based on #link(
 
 == An algorithm
 
+=== With algorithm function
+
 #algorithm(
   title: "Fib",
   parameters: ("n",),
@@ -181,4 +209,28 @@ Our flex-caption is based on #link(
     return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
   ],
   caption: [My algorithm],
+)
+
+=== Passing alg to a figure
+
+#import "@preview/algo:0.3.6": algo, d, i
+
+#let my-content = [
+  if $n < 0$:#i\ // use #i to indent the following lines
+  return null#d\ // use #d to dedent the following lines
+  if $n = 0$ or $n = 1$:#i \
+  return $n$#d \
+  return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+]
+
+#figure(
+  algo(
+    title: "Fib",
+    parameters: ("n",),
+    fill: rgb("#e4c554"),
+    my-content,
+  ),
+  caption: [my caption],
+  kind: "algorithm",
+  supplement: [Algorithm],
 )
