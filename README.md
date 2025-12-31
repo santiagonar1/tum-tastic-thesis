@@ -251,7 +251,9 @@ listing, algorithm, etc.
 ```
 
 We offer this purely for convenience. You can also pass a `code` to a figure,
-in case you want more control on the styling:
+in case you want more control on the styling. Just make sure to pass
+`kind: raw` as the figure type, so that the template handles the listing
+numbering appropriately.
 
 ```typst
 #import "@preview/algo:0.3.6": code
@@ -266,7 +268,7 @@ in case you want more control on the styling:
     }
     ```
 // Here you can use all the styling offered by the code function in the
-// algo package
+// algo package. Mark the kind of figure as raw!
 #figure(code(my-code, fill: luma(240)), caption: [my caption], kind: raw)
 ```
 
