@@ -94,7 +94,7 @@ Our flex-caption is based on #link(
 #algorithm(
   title: "Fib",
   parameters: ("n",),
-  code: [
+  my-content: [
     if $n < 0$:#i\ // use #i to indent the following lines
     return null#d\ // use #d to dedent the following lines
     if $n = 0$ or $n = 1$:#i \

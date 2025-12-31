@@ -23,7 +23,7 @@
 #let algorithm(
   title: "My algorithm",
   parameters: (),
-  code: [],
+  my-content: [],
   caption: [my caption],
 ) = [
   #figure(
@@ -31,7 +31,7 @@
       title: title,
       parameters: parameters,
       fill: rgb(255, 244, 204),
-      code,
+      my-content,
     ),
     caption: caption,
     supplement: [Algorithm],
