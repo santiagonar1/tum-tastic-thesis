@@ -20,7 +20,8 @@ build: init
     typst compile template/main.typ build/main.pdf
 
 thumbnail:
-    typst compile thumbnail.typ thumbnail.png
+    typst compile -f png --pages 1 --ppi 250 thumbnail.typ thumbnail.png
+    oxipng -o 2 --strip safe --alpha thumbnail.png
 
 package target *options:
     ./scripts/package.sh "{{target}}" {{options}}
