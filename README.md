@@ -295,6 +295,7 @@ all the [algo](https://typst.app/universe/package/algo/) package, but simply
       return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
     ],
     caption: [My algorithm],
+    fill: rgb(255, 244, 204), // Default value
   )
 ```
 

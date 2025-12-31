@@ -25,12 +25,13 @@
   parameters: (),
   my-content: [],
   caption: [my caption],
+  fill: rgb(255, 244, 204),
 ) = [
   #figure(
     algo(
       title: title,
       parameters: parameters,
-      fill: rgb(255, 244, 204),
+      fill: fill,
       my-content,
     ),
     caption: caption,
