@@ -15,8 +15,15 @@ on:
 jobs:
   # Unique identifier of our job (`job_id`)
   test:
+    strategy:
+      # run tests on all versions, even if one fails
+      fail-fast: false
+      matrix:
+        # add any other Typst versions that your package should support
+        typst-version: [0.14.0, 0.14.1, 0.14.2]
+
     # Sets the name for the job, which is displayed in the GitHub UI
-    name: Test TUM-tastic
+    name: Test for ${{ matrix.typst-version }}
     runs-on: ubuntu-latest
     steps:
       - name: Verify Git LFS installation
@@ -27,6 +34,8 @@ jobs:
       - name: Setup typst
         id: setup-typst
         uses: typst-community/setup-typst@v4
+        with:
+          typst-version: ${{ matrix.typst-version }}
 
       - name: Check version typst
         run: typst --version
@@ -62,7 +71,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: typst-test-results
+          name: typst--${{ steps.setup-typst.outputs.typst-version }}-test-results
           path: |
             tests/**/diff/*.png
             tests/**/out/*.png
