@@ -8,7 +8,8 @@
 #import "cover-page.typ": print-cover
 #import "title-page.typ": print-dissertation-title, print-thesis-title
 
-#import "@preview/algo:0.3.6": algo, d, i
+#import "package.typ": package
+#import package("algo"): algo, d, i
 
 #let listing(
   code: raw("code"),
