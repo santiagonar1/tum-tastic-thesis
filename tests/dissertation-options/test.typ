@@ -241,6 +241,28 @@
   )
 ]
 
+#let show-chapter-header = [
+  #show: dissertation.with(
+    degree-name: "My Custom Degree",
+    show-index: false,
+    show-algorithm-index: false,
+    show-figures-index: false,
+    show-cover: true,
+    show-table-index: false,
+    show-listing-index: false,
+    show-chapter-header: true,
+    acknowledgements: none,
+    abstract: none,
+  )
+  = One
+  #pagebreak()
+  == Inside one
+  #pagebreak()
+  = Two
+  #pagebreak()
+  == Inside two
+]
+
 #show-cover
 #show-cover-with-image
 #show-index
@@ -255,3 +277,4 @@
 #show-custom-author-info
 #show-custom-chair-info
 #show-custom-dates
+#show-chapter-header

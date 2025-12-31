@@ -26,8 +26,20 @@
   = Listing
 ]
 
+#let show-chapter-header = [
+  #show: chapter.with()
+  = One
+  #pagebreak()
+  == Inside one
+  #pagebreak()
+  = Two
+  #pagebreak()
+  == Inside two
+]
+
 #show-index
 #show-algorithm-index
 #show-figures-index
 #show-table-index
 #show-listing-index
+#show-chapter-header
