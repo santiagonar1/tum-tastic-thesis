@@ -61,12 +61,43 @@
   show-table-index: false,
   show-listing-index: false,
   show-algorithm-index: false,
+  show-chapter-header: true,
   doc,
 ) = {
   // ----------- Sets -----------
   // Format page count
   counter(page).update(1)
   set page(numbering: "1")
+
+  // Format heading
+  if show-chapter-header {
+    set page(
+      header: context {
+        set text(style: "italic")
+        // 1. Find all headings that appear before the current location
+        let selector-before = selector(heading.where(level: 1)).before(here())
+        let headings-before = query(selector-before)
+
+        // 2. If there are no headings before the current point, return nothing
+        if headings-before.len() == 0 {
+          return
+        }
+
+        // 3. Get the most recent heading element
+        let name = headings-before.last().body
+
+        let current-page = here().page()
+        let has-heading = query(heading.where(level: 1)).any(it => (
+          it.location().page() == current-page
+        ))
+
+        if not has-heading {
+          let chapter-num = counter(heading.where(level: 1)).get().first()
+          align(right)[#chapter-num. #name]
+        }
+      },
+    )
+  }
 
   // Format link
   show link: it => {
@@ -162,6 +193,7 @@
   doc
 
   // --------After content ---------
+  set page(header: none)
 
   // Note: it is important for the pagebreak() to be before any printing,
   // as otherwise typst might think that the page belongs to whatever
@@ -220,6 +252,7 @@
   show-table-index: true,
   show-listing-index: true,
   show-algorithm-index: true,
+  show-chapter-header: true,
   doc,
 ) = {
   let print-empty-page() = [
@@ -270,7 +303,7 @@
   }
 
   // ----------- Content -----------
-  show: chapter.with()
+  show: chapter.with(show-chapter-header: show-chapter-header)
 
   doc
 
@@ -323,6 +356,7 @@
   show-table-index: true,
   show-listing-index: true,
   show-algorithm-index: true,
+  show-chapter-header: true,
   doc,
 ) = {
   let print-empty-page() = [
@@ -366,13 +400,13 @@
     pagebreak()
   }
 
-    if show-index {
+  if show-index {
     print-index()
     pagebreak()
   }
 
   // ----------- Content -----------
-  show: chapter.with()
+  show: chapter.with(show-chapter-header: show-chapter-header)
 
   doc
 

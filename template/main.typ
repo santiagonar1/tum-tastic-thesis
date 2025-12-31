@@ -23,13 +23,24 @@
 #pagebreak()
 #theory.content
 
+// After your chapters:
 
 #set heading(numbering: none)
 
 // Print bibliography
+#set page(header: [
+  #set text(style: "italic")
+  #align(right)[Bibliography]
+])
+
 #pagebreak()
 #bibliography("bibliography.bib")
 
 // Print abbreviations
+#set page(header: [
+  #set text(style: "italic")
+  #align(right)[Abbreviations]
+])
+
 #pagebreak()
 #abbr.list()

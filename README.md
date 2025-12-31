@@ -90,6 +90,7 @@ should be printed or not (e.g., the cover, different outlines).
   show-table-index: true,
   show-listing-index: true,
   show-algorithm-index: true,
+  show-chapter-header: true,
 )
 ```
 
@@ -129,6 +130,7 @@ a thesis and a dissertation also differs, but *TUM-tastic* takes care of that.
   show-table-index: true,
   show-listing-index: true,
   show-algorithm-index: true,
+  show-chapter-header: true,
 )
 ```
 
@@ -148,7 +150,8 @@ with the default values shown below.
   show-figures-index: false,
   show-table-index: false,
   show-listing-index: false,
-  show-algorithm-index: false
+  show-algorithm-index: false,
+  show-chapter-header: true,
 )
 ```
 

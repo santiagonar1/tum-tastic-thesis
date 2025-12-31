@@ -4,7 +4,7 @@
 
 #import "@preview/algo:0.3.6" as algo
 
-#show: chapter.with()
+#show: chapter.with(show-chapter-header: false)
 
 
 // Your chapters go here
