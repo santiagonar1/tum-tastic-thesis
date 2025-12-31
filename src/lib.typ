@@ -1,11 +1,11 @@
 // templates
-#import "tum-tastic-thesis.typ": dissertation, thesis, chapter
+#import "tum-tastic-thesis.typ": chapter, dissertation, thesis
 
 // algorithms
 #import "tum-tastic-thesis.typ": algo, d, i
 
 // functions
-#import "tum-tastic-thesis.typ": listing, algorithm, flex-caption
+#import "tum-tastic-thesis.typ": algorithm, flex-caption, listing
 
 // styling
 #import "tum-font.typ": font-sizes
