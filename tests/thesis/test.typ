@@ -1,5 +1,5 @@
 #import "/src/tum-tastic-thesis.typ": (
-  algorithm, d, thesis, flex-caption, i, listing,
+  algorithm, d, flex-caption, i, listing, thesis,
 )
 
 #show: thesis.with()
@@ -153,20 +153,20 @@ Our flex-caption is based on #link(
   caption: [Code snippet using listing function],
 )
 
-=== Passing raw to a figure
+=== Passing code to a figure
 
-#figure(
-  ```typst
-  #show ref: it => {
-    if it.element == none {
-      text(fill: red)[(??)]
-    } else {
-      it
-    }
+#import "@preview/algo:0.3.6": code
+
+#let my-code = ```typst
+#show ref: it => {
+  if it.element == none {
+    text(fill: red)[(??)]
+  } else {
+    it
   }
-  ```,
-  caption: [Code snippet using figure function],
-)
+}
+```
+#figure(code(my-code, fill: luma(61.15%)), caption: [my caption], kind: raw)
 
 == An algorithm
 
