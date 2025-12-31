@@ -1,4 +1,4 @@
-#import "package.typ": package
+#import "packages.typ": package
 #import package("cetz") as cetz
 
 #import "tum-colors.typ": tum-colors
