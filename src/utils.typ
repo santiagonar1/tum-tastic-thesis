@@ -1,5 +1,5 @@
 #import "page-conf.typ": content-page-margins, first-line-indent, tum-page
-#import "tum-font.typ": font-sizes, tum-font
+#import "tum-font.typ": font-sizes
 
 #let check-keys(error-preamble, expected-keys, dict) = {
   for key in expected-keys [
@@ -14,7 +14,7 @@
   #set heading(numbering: none)
 
   #show heading.where(level: 1): it => {
-    set text(font: tum-font, size: font-sizes.h1)
+    set text(size: font-sizes.h1)
     v(2em)
     strong(it)
     v(1em)
@@ -25,7 +25,7 @@
 
 #let print-section-before-chapters(title: [Title], body) = [
   // --------------  Sets  --------------
-  #set text(font: tum-font, size: font-sizes.base)
+  #set text(size: font-sizes.base)
 
   #let margins = content-page-margins
   #set page(

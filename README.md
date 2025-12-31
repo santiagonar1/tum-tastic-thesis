@@ -42,10 +42,10 @@ It also comes with three helper functions:
 1. `flex-caption`, useful to distinguish between shorter and longer captions, to show in the outline or below the element, respectively. It is based on [this code snippet](https://github.com/typst/typst/issues/1295#issuecomment-2749005636).
 1. `listing`, to avoid having to wrap a raw text in a figure.
 1. `algorithm`, that creates an abstraction on top of the [algo](https://typst.app/universe/package/algo/). It maintains consistency in style and handles the caption (e.g., it uses `Algorithm` as a supplement in the caption).
+
 We also expose:
 
 1. `font-sizes`, a dictionary with the font size for base and h[1-4].
-1. `tum-font`, with the default font used in the document.
 1. `tum-colors`, a dictionary with different colors taken from the TUM corporate design.
 
 ### Dissertation
@@ -69,8 +69,16 @@ should be printed or not (e.g., the cover, different outlines).
     first-evaluator: "Prof. First Evaluator Here",
     second-evaluator: "Prof. Second Evaluator Here",
   ),
-  date-submitted: datetime.today(),
-  date-accepted: datetime.today(),
+  date-submitted: datetime(
+    year: 2020,
+    month: 10,
+    day: 4,
+  ),
+  date-accepted: datetime(
+    year: 2021,
+    month: 10,
+    day: 4,
+  ),
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
   show-cover: true,
@@ -102,7 +110,11 @@ a thesis and a dissertation also differs, but *TUM-tastic* takes care of that.
     examiner: "Prof. Chair Here",
     supervisor: "Supervisor goes here",
   ),
-  date-submitted: datetime.today(),
+  date-submitted: datetime(
+    year: 2020,
+    month: 10,
+    day: 4,
+  ),
   acknowledgements: [#lorem(100)],
   abstract: [#lorem(100)],
   show-cover: true,

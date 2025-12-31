@@ -11,10 +11,10 @@ init:
     @mkdir -p build
 
 test *filter:
-    tt run {{filter}} --use-system-fonts
+    tt run {{filter}}
 
 update-test *filter:
-    tt update {{filter}} --use-system-fonts
+    tt update {{filter}}
 
 build: init
     typst compile template/main.typ build/main.pdf

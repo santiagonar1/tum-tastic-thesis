@@ -1,5 +1,3 @@
-#let tum-font = "Helvetica"
-
 // TUM CD-like font sizing for A4
 #let font-sizes = (
   base: 11pt,

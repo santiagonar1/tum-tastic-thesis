@@ -1,0 +1,70 @@
+# The name of your workflow. GitHub displays the names of your workflows on your repository's "Actions" tab
+name: TUM-tastic tests
+
+# To automatically trigger the workflow
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  # Unique identifier of our job (`job_id`)
+  test:
+    # Sets the name for the job, which is displayed in the GitHub UI
+    name: Test TUM-tastic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify Git LFS installation
+        run: |
+          git --version
+          git lfs version || echo "git-lfs not found"
+
+      - name: Setup typst
+        id: setup-typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Check version typst
+        run: typst --version
+
+      - name: Install just
+        uses: taiki-e/install-action@v2
+        with:
+          tool: just
+
+      - name: Check version just
+        run: just --version
+
+      - name: Install tytanic
+        uses: taiki-e/install-action@v2
+        with:
+          tool: tytanic
+
+      - name: Check version tytanic
+        run: tt --version
+
+      - name: Check out repository code
+        uses: actions/checkout@v6
+        with:
+          lfs: true
+
+      - name: Install template
+        run: just install
+
+      - name: Run test suite
+        run: just test
+
+      - name: Archive test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: typst-test-results
+          path: |
+            tests/**/diff/*.png
+            tests/**/out/*.png
+            tests/**/ref/*.png
+          retention-days: 3
