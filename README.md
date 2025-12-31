@@ -275,7 +275,7 @@ in case you want more control on the styling:
 We have a wrapper on top of the [algo](https://typst.app/universe/package/algo/)
 package. We did so such that we could guarantee a consistent style, as well
 as generate a List of Algorithms. Be aware that, as of now, we do not expose
-all the [algo](https://typst.app/universe/package/algo/) package, but simple
+all the [algo](https://typst.app/universe/package/algo/) package, but simply
 `d` and `i` (i.e., you cannot get things like `code`, or `comment` from
 *TUM-tastic*).
 
