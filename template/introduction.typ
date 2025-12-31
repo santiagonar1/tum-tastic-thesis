@@ -99,10 +99,8 @@
 
   == Code snippet
 
-  === With listing function
-
   #listing(
-    code: ```typst
+    my-code: ```typst
     #show ref: it => {
       if it.element == none {
         text(fill: red)[(??)]
@@ -114,27 +112,12 @@
     caption: [Code snippet using listing function],
   )
 
-  === Passing raw to a figure
-
-  #figure(
-    ```typst
-    #show ref: it => {
-      if it.element == none {
-        text(fill: red)[(??)]
-      } else {
-        it
-      }
-    }
-    ```,
-    caption: [Code snippet using figure function],
-  )
-
   == An algorithm
 
   #algorithm(
     title: "Fib",
     parameters: ("n",),
-    code: [
+    my-content: [
       if $n < 0$:#i\ // use #i to indent the following lines
       return null#d\ // use #d to dedent the following lines
       if $n = 0$ or $n = 1$:#i \

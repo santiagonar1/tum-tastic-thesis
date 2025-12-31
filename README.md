@@ -40,7 +40,7 @@ Alternatively, if you want to modify the template itself, take a look at
 It also comes with three helper functions:
 
 1. `flex-caption`, useful to distinguish between shorter and longer captions, to show in the outline or below the element, respectively. It is based on [this code snippet](https://github.com/typst/typst/issues/1295#issuecomment-2749005636).
-1. `listing`, to avoid having to wrap a raw text in a figure.
+1. `listing`, uses the `code` function from [algo](https://typst.app/universe/package/algo/), but handling captions.
 1. `algorithm`, that creates an abstraction on top of the [algo](https://typst.app/universe/package/algo/). It maintains consistency in style and handles the caption (e.g., it uses `Algorithm` as a supplement in the caption).
 
 We also expose:
@@ -236,7 +236,7 @@ listing, algorithm, etc.
 #import "@preview/tum-tastic-thesis:0.1.0": listing
 
 #listing(
-    code: ```typst
+    my-code: ```typst
     #show ref: it => {
       if it.element == none {
         text(fill: red)[(??)]
@@ -245,17 +245,20 @@ listing, algorithm, etc.
       }
     }
     ```,
+    fill: luma(240), // Default value
     caption: [Code snippet using listing function],
   )
 ```
 
-We offer this purely for convenience. You can also pass raw text into a figure
-to obtain the same result. You can also combine both approaches in the same
-document without issues.
+We offer this purely for convenience. You can also pass a `code` to a figure,
+in case you want more control on the styling. Just make sure to pass
+`kind: raw` as the figure type, so that the template handles the listing
+numbering appropriately.
 
 ```typst
-#figure(
-    ```typst
+#import "@preview/algo:0.3.6": code
+
+#let my-code = ```typst
     #show ref: it => {
       if it.element == none {
         text(fill: red)[(??)]
@@ -263,9 +266,10 @@ document without issues.
         it
       }
     }
-    ```,
-    caption: [Code snippet using figure function],
-  )
+    ```
+// Here you can use all the styling offered by the code function in the
+// algo package. Mark the kind of figure as raw!
+#figure(code(my-code, fill: luma(240)), caption: [my caption], kind: raw)
 ```
 
 ### Using `algorithm`
@@ -273,7 +277,7 @@ document without issues.
 We have a wrapper on top of the [algo](https://typst.app/universe/package/algo/)
 package. We did so such that we could guarantee a consistent style, as well
 as generate a List of Algorithms. Be aware that, as of now, we do not expose
-all the [algo](https://typst.app/universe/package/algo/) package, but simple
+all the [algo](https://typst.app/universe/package/algo/) package, but simply
 `d` and `i` (i.e., you cannot get things like `code`, or `comment` from
 *TUM-tastic*).
 
@@ -283,7 +287,7 @@ all the [algo](https://typst.app/universe/package/algo/) package, but simple
 #algorithm(
     title: "Fib",
     parameters: ("n",),
-    code: [
+    my-content: [
       if $n < 0$:#i\ // use #i to indent the following lines
       return null#d\ // use #d to dedent the following lines
       if $n = 0$ or $n = 1$:#i \
@@ -291,7 +295,41 @@ all the [algo](https://typst.app/universe/package/algo/) package, but simple
       return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
     ],
     caption: [My algorithm],
+    fill: rgb(255, 244, 204), // Default value
   )
+```
+
+As with `listing`, you can also recreate this by passing an `algo` to a `figure`.
+This has the advantage that you can have additional styling options. Make sure
+to mark `kind: "algorithm"` for the `figure` , and add as supplement
+`[Algorithm]`, so that the template includes it in the Algorithm section and
+puts the correct caption:
+
+```typst
+#import "@preview/algo:0.3.6": algo, i, d
+
+#let my-content = [
+  if $n < 0$:#i\ // use #i to indent the following lines
+  return null#d\ // use #d to dedent the following lines
+  if $n = 0$ or $n = 1$:#i \
+  return $n$#d \
+  return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+]
+
+// Here you can use all the styling offered by the algo function in the
+// algo package. Mark the kind of figure as "algorithm", and add as supplement
+// `[Algorithm]`
+#figure(
+  algo(
+    title: "Fib",
+    parameters: ("n",),
+    fill: rgb("#e4c554"),
+    my-content,
+  ),
+  caption: [my caption],
+  kind: "algorithm",
+  supplement: [Algorithm],
+)
 ```
 
 ## Contributing

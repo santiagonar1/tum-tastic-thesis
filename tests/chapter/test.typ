@@ -2,6 +2,8 @@
   algorithm, chapter, d, flex-caption, i, listing,
 )
 
+#import "@preview/algo:0.3.6" as algo
+
 #show: chapter.with()
 
 
@@ -60,7 +62,7 @@ Our flex-caption is based on #link(
 === With listing function
 
 #listing(
-  code: ```typst
+  my-code: ```typst
   #show ref: it => {
     if it.element == none {
       text(fill: red)[(??)]
@@ -72,27 +74,29 @@ Our flex-caption is based on #link(
   caption: [Code snippet using listing function],
 )
 
-=== Passing raw to a figure
+=== Passing code to a figure
 
-#figure(
-  ```typst
-  #show ref: it => {
-    if it.element == none {
-      text(fill: red)[(??)]
-    } else {
-      it
-    }
+#import "@preview/algo:0.3.6": code
+
+#let my-code = ```typst
+#show ref: it => {
+  if it.element == none {
+    text(fill: red)[(??)]
+  } else {
+    it
   }
-  ```,
-  caption: [Code snippet using figure function],
-)
+}
+```
+#figure(code(my-code, fill: luma(61.15%)), caption: [my caption], kind: raw)
 
 == An algorithm
+
+=== With algorithm function
 
 #algorithm(
   title: "Fib",
   parameters: ("n",),
-  code: [
+  my-content: [
     if $n < 0$:#i\ // use #i to indent the following lines
     return null#d\ // use #d to dedent the following lines
     if $n = 0$ or $n = 1$:#i \
@@ -101,3 +105,28 @@ Our flex-caption is based on #link(
   ],
   caption: [My algorithm],
 )
+
+=== Passing alg to a figure
+
+#import "@preview/algo:0.3.6": algo, d, i
+
+#let my-content = [
+  if $n < 0$:#i\ // use #i to indent the following lines
+  return null#d\ // use #d to dedent the following lines
+  if $n = 0$ or $n = 1$:#i \
+  return $n$#d \
+  return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
+]
+
+#figure(
+  algo(
+    title: "Fib",
+    parameters: ("n",),
+    fill: rgb("#e4c554"),
+    my-content,
+  ),
+  caption: [my caption],
+  kind: "algorithm",
+  supplement: [Algorithm],
+)
+
