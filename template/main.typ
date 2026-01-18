@@ -44,7 +44,7 @@
 // If you are doing a bachelor/master thesis, use instead the code below.
 // Check more parameters in the template documentation:
 // https://typst.app/universe/package/tum-tastic-thesis
-// 
+//
 // #show: thesis.with(
 //   author-info: (
 //     name: "Your Name Here",
