@@ -15,10 +15,9 @@
   my-code: raw("code"),
   caption: [my caption],
   fill: luma(240),
-) = [
-  #figure(code(my-code, fill: fill), caption: caption, kind: raw)
+) = figure(code(my-code, fill: fill), caption: caption, kind: raw)
 
-]
+
 
 #let algorithm(
   title: "My algorithm",
