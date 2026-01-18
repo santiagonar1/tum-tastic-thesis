@@ -55,7 +55,7 @@ can see, there are multiple points of customization, especially on what elements
 should be printed or not (e.g., the cover, different outlines).
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": dissertation
+#import "@preview/tum-tastic-thesis:0.1.1": dissertation
 
 #show: dissertation.with(
   author-info: (
@@ -101,7 +101,7 @@ similar to the `dissertation` one, but with fewer fields. The title page of
 a thesis and a dissertation also differs, but *TUM-tastic* takes care of that.
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": thesis
+#import "@preview/tum-tastic-thesis:0.1.1": thesis
 
 #show: thesis.with(
   author-info: (
@@ -143,7 +143,7 @@ especially for long documents. That is why we include the `chapter` template,
 with the default values shown below.
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": chapter
+#import "@preview/tum-tastic-thesis:0.1.1": chapter
 
 #show: chapter.with(
   show-index: false,
@@ -159,7 +159,7 @@ You could then have your `main.typ` file looking something like:
 
 ```typst
 // ----- main.typ ------
-#import "@preview/tum-tastic-thesis:0.1.0": dissertation
+#import "@preview/tum-tastic-thesis:0.1.1": dissertation
 
 #import "introduction.typ" as introduction
 
@@ -173,7 +173,7 @@ And then an `introduction.typ` that looks like:
 
 ```typst
 // ------ introduction.typ -----
-#import "@preview/tum-tastic-thesis:0.1.0": chapter
+#import "@preview/tum-tastic-thesis:0.1.1": chapter
 
 // Handle undefined references when compiling a chapter as a standalone
 // document. See:
@@ -215,7 +215,7 @@ You can use `flex-caption` with anything that takes a caption, such a figure,
 listing, algorithm, etc.
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": flex-caption
+#import "@preview/tum-tastic-thesis:0.1.1": flex-caption
 
 #figure(
     curve(
@@ -238,7 +238,7 @@ listing, algorithm, etc.
 ### Using `listing`
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": listing
+#import "@preview/tum-tastic-thesis:0.1.1": listing
 
 #listing(
     my-code: ```typst
@@ -287,7 +287,7 @@ all the [algo](https://typst.app/universe/package/algo/) package, but simply
 *TUM-tastic*).
 
 ```typst
-#import "@preview/tum-tastic-thesis:0.1.0": algorithm, d, i
+#import "@preview/tum-tastic-thesis:0.1.1": algorithm, d, i
 
 #algorithm(
     title: "Fib",
