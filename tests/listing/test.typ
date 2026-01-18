@@ -10,10 +10,12 @@
 }
 ```
 
+See @my-listing
+
 #listing(
   my-code: my-code,
   caption: [Code snippet using listing function],
-)
+) <my-listing>
 
 #listing(
   my-code: my-code,
