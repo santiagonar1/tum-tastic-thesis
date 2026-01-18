@@ -1,6 +1,6 @@
 [package]
 name = "tum-tastic-thesis"
-version = "0.1.0"
+version = "0.1.1"
 compiler = "0.14.0"
 repository = "https://github.com/santiagonar1/tum-tastic-thesis"
 entrypoint = "src/lib.typ"
