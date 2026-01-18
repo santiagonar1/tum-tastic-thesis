@@ -3,13 +3,16 @@
 
 #let print-index() = [
   // --------------  Sets  --------------
-  #show outline.entry.where(level: 1): it => link(
-    it.element.location(),
-    it.indented(it.prefix(), text(
-      weight: "bold",
-      size: font-sizes.base,
-    )[#it.inner()]),
-  )
+  #show outline.entry.where(level: 1): it => {
+    v(6pt) // Adjust spacing as needed
+    link(
+      it.element.location(),
+      it.indented(it.prefix(), text(
+        weight: "bold",
+        size: font-sizes.base,
+      )[#it.inner()]),
+    )
+  }
 
   #show outline.entry: set text(size: font-sizes.base)
 
