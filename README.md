@@ -40,8 +40,8 @@ Alternatively, if you want to modify the template itself, take a look at
 It also comes with three helper functions:
 
 1. `flex-caption`, useful to distinguish between shorter and longer captions, to show in the outline or below the element, respectively. It is based on [this code snippet](https://github.com/typst/typst/issues/1295#issuecomment-2749005636).
-1. `listing`, uses the `code` function from [algo](https://typst.app/universe/package/algo/), but handling captions.
-1. `algorithm`, that creates an abstraction on top of the [algo](https://typst.app/universe/package/algo/). It maintains consistency in style and handles the caption (e.g., it uses `Algorithm` as a supplement in the caption).
+1. `listing`, uses the `code` function from [algo](https://typst.app/universe/package/algo/), but handling captions. You can use labels with our `listing`, as you would do with a figure.
+1. `algorithm`, that creates an abstraction on top of the [algo](https://typst.app/universe/package/algo/). It maintains consistency in style and handles the caption (e.g., it uses `Algorithm` as a supplement in the caption). You can use labels with our `algorithm`, as you would do with a figure.
 
 We also expose:
 
