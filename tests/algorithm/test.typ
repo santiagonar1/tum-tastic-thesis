@@ -8,12 +8,14 @@
   return #smallcaps("Fib")$(n-1) +$ #smallcaps("Fib")$(n-2)$/*  */
 ]
 
+See @my-algorithm
+
 #algorithm(
   title: "Fib",
   parameters: ("n",),
   my-content: my-content,
   caption: [My algorithm],
-)
+) <my-algorithm>
 
 #algorithm(
   title: "Fib",

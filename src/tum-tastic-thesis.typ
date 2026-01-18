@@ -25,19 +25,17 @@
   my-content: [],
   caption: [my caption],
   fill: rgb(255, 244, 204),
-) = [
-  #figure(
-    algo(
-      title: title,
-      parameters: parameters,
-      fill: fill,
-      my-content,
-    ),
-    caption: caption,
-    supplement: [Algorithm],
-    kind: "algorithm",
-  )
-]
+) = figure(
+  algo(
+    title: title,
+    parameters: parameters,
+    fill: fill,
+    my-content,
+  ),
+  caption: caption,
+  supplement: [Algorithm],
+  kind: "algorithm",
+)
 
 // Nice function to enable short and longer descriptions of figures.
 // The short one will be displayed in the outline, the long one in
